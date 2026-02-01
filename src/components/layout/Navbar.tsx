@@ -14,63 +14,56 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
-const products: { title: string; href: string; description: string }[] = [
+const courses = [
   {
-    title: "Polludrone",
-    href: "/products#polludrone",
-    description:
-      "Ambient Air Quality Monitoring System for smart cities and airports.",
+    title: "MBA",
+    href: "/courses#mba",
+    description: "Master of Business Administration - Advance your career with top-tier management skills.",
   },
   {
-    title: "Pollusense",
-    href: "/products#pollusense",
-    description: "Portable Air Quality Monitoring System for mobile surveys.",
+    title: "BBA",
+    href: "/courses#bba",
+    description: "Bachelor of Business Administration - Foundation for future business leaders.",
   },
   {
-    title: "Odosense",
-    href: "/products#odosense",
-    description: "Odour Monitoring System for landfills and treatment plants.",
+    title: "MCOM",
+    href: "/courses#mcom",
+    description: "Master of Commerce - Specialized knowledge in accounting and finance.",
   },
   {
-    title: "Dustroid",
-    href: "/products#dustroid",
-    description:
-      "Real-time Dust Monitoring System for construction and mining.",
-  },
-  {
-    title: "AQBot",
-    href: "/products#aqbot",
-    description:
-      "Industrial Air Quality Monitor for automation and compliance.",
-  },
-  {
-    title: "Weathercom",
-    href: "/products#weathercom",
-    description: "Automatic Weather Station for meteorological parameters.",
+    title: "BCOM",
+    href: "/courses#bcom",
+    description: "Bachelor of Commerce - Comprehensive understanding of commerce and trade.",
   },
 ];
 
-const sectors: { title: string; href: string; description: string }[] = [
+const services = [
   {
-    title: "Urban Air Quality",
-    href: "/sectors/urban",
-    description: "Monitoring solutions for smart cities and campuses.",
+    title: "Professional Counselling",
+    href: "/services/counselling",
+    description: "Expert guidance for online grad and post-grad courses.",
   },
   {
-    title: "Odour Monitoring",
-    href: "/sectors/odour",
-    description: "Solutions for managing odour complaints and compliance.",
+    title: "Training Services",
+    href: "/services/training",
+    description: "Skill enhancement training to crack interviews.",
   },
   {
-    title: "Industrial",
-    href: "/sectors/industrial",
-    description: "EHS compliance and process optimization for industries.",
+    title: "Placement Services",
+    href: "/services/placement",
+    description: "Job placement assistance in BFSI sector.",
   },
   {
-    title: "Research",
-    href: "/sectors/research",
-    description: "High-accuracy data for environmental research projects.",
+    title: "Financing",
+    href: "/services/financing",
+    description: "Smooth financing options through our Fintech partners.",
+  },
+  {
+    title: "Multi-lingual Support",
+    href: "/services/multilingual",
+    description: "Counselling and support in your preferred language.",
   },
 ];
 
@@ -78,15 +71,15 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="border-b bg-white sticky top-0 z-50">
+    <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="flex h-16 items-center px-4 container mx-auto justify-between">
         <Link
           href="/"
-          className="font-bold text-2xl tracking-tight text-slate-900 flex items-center gap-2">
-          {/* EnviroLko Logo Placeholder - In a real app, use the SVG or Image component */}
+          className="font-bold text-2xl tracking-tight text-primary flex items-center gap-2">
+          {/* Logo */}
           <div className="flex items-center justify-center">
-            <span className="text-blue-600 font-extrabold text-3xl">
-              ENVIROLKO
+            <span className="text-primary font-extrabold text-3xl">
+              EDGROWTH
             </span>
           </div>
         </Link>
@@ -96,10 +89,10 @@ export function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-md shadow-lg border">
-                    {products.map((component) => (
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-popover rounded-md shadow-lg border">
+                    {courses.map((component) => (
                       <ListItem
                         key={component.title}
                         title={component.title}
@@ -111,10 +104,10 @@ export function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Sectors</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-md shadow-lg border">
-                    {sectors.map((component) => (
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-popover rounded-md shadow-lg border">
+                    {services.map((component) => (
                       <ListItem
                         key={component.title}
                         title={component.title}
@@ -128,18 +121,9 @@ export function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link
-                    href="/case-studies"
+                    href="/contact"
                     className={navigationMenuTriggerStyle()}>
-                    Case Studies
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/resources"
-                    className={navigationMenuTriggerStyle()}>
-                    Resources
+                    Contact
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -147,36 +131,40 @@ export function Navbar() {
           </NavigationMenu>
         </div>
 
-        <div className="hidden lg:flex gap-4">
+        <div className="hidden lg:flex gap-4 items-center">
+          <ThemeToggle />
           <Link
             href="/contact"
-            className="inline-flex h-10 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-700 disabled:pointer-events-none disabled:opacity-50">
+            className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
             Get In Touch
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden"
-          onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X color="#155dfc" /> : <Menu color="#155dfc" />}
-        </button>
+        <div className="flex items-center gap-4 lg:hidden">
+          <ThemeToggle />
+          <button
+            className="lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X className="text-foreground" /> : <Menu className="text-foreground" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden p-4 bg-white border-t h-screen overflow-y-auto pb-20">
+        <div className="lg:hidden p-4 bg-background border-t h-screen overflow-y-auto pb-20">
           <nav className="flex flex-col gap-6">
             <div>
-              <span className="font-semibold text-sm text-slate-500 uppercase tracking-wider block mb-2">
-                Products
+              <span className="font-semibold text-sm text-muted-foreground uppercase tracking-wider block mb-2">
+                Courses
               </span>
               <div className="flex flex-col gap-2 pl-4">
-                {products.map((p) => (
+                {courses.map((p) => (
                   <Link
                     key={p.title}
                     href={p.href}
-                    className="text-slate-900 py-1"
+                    className="text-foreground py-1"
                     onClick={() => setIsOpen(false)}>
                     {p.title}
                   </Link>
@@ -185,15 +173,15 @@ export function Navbar() {
             </div>
 
             <div>
-              <span className="font-semibold text-sm text-slate-500 uppercase tracking-wider block mb-2">
-                Sectors
+              <span className="font-semibold text-sm text-muted-foreground uppercase tracking-wider block mb-2">
+                Services
               </span>
               <div className="flex flex-col gap-2 pl-4">
-                {sectors.map((s) => (
+                {services.map((s) => (
                   <Link
                     key={s.title}
                     href={s.href}
-                    className="text-slate-900 py-1"
+                    className="text-foreground py-1"
                     onClick={() => setIsOpen(false)}>
                     {s.title}
                   </Link>
@@ -202,22 +190,16 @@ export function Navbar() {
             </div>
 
             <Link
-              href="/case-studies"
-              className="font-semibold text-slate-900"
+              href="/contact"
+              className="font-semibold text-foreground"
               onClick={() => setIsOpen(false)}>
-              Case Studies
-            </Link>
-            <Link
-              href="/resources"
-              className="font-semibold text-slate-900"
-              onClick={() => setIsOpen(false)}>
-              Resources
+              Contact
             </Link>
 
-            <div className="h-px bg-slate-200 my-2"></div>
+            <div className="h-px bg-border my-2"></div>
             <Link
               href="/contact"
-              className="text-center rounded-md bg-blue-600 px-4 py-3 text-sm font-medium text-white"
+              className="text-center rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
               onClick={() => setIsOpen(false)}>
               Get In Touch
             </Link>
@@ -238,12 +220,12 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className,
           )}
           {...props}>
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-slate-500">
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
         </a>
