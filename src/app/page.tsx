@@ -70,9 +70,9 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-primary">50+</div>
+            <div className="text-3xl font-bold text-primary">20+</div>
             <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-              <Globe size={14} /> University Partners
+              <Globe size={14} /> Top Online Courses
             </div>
           </div>
           <div>
@@ -82,9 +82,9 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-primary">₹10Cr+</div>
+            <div className="text-3xl font-bold text-primary">1000+</div>
             <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-              <DollarSign size={14} /> Financing Facilitated
+              <GraduationCap size={14} /> Happy Students
             </div>
           </div>
         </div>

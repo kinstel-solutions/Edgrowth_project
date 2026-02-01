@@ -39,33 +39,6 @@ const courses = [
   },
 ];
 
-const services = [
-  {
-    title: "Professional Counselling",
-    href: "/services/counselling",
-    description: "Expert guidance for online grad and post-grad courses.",
-  },
-  {
-    title: "Training Services",
-    href: "/services/training",
-    description: "Skill enhancement training to crack interviews.",
-  },
-  {
-    title: "Placement Services",
-    href: "/services/placement",
-    description: "Job placement assistance in BFSI sector.",
-  },
-  {
-    title: "Financing",
-    href: "/services/financing",
-    description: "Smooth financing options through our Fintech partners.",
-  },
-  {
-    title: "Multi-lingual Support",
-    href: "/services/multilingual",
-    description: "Counselling and support in your preferred language.",
-  },
-];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -104,19 +77,13 @@ export function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-popover rounded-md shadow-lg border">
-                    {services.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}>
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/#services"
+                    className={navigationMenuTriggerStyle()}>
+                    Services
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
@@ -172,22 +139,12 @@ export function Navbar() {
               </div>
             </div>
 
-            <div>
-              <span className="font-semibold text-sm text-muted-foreground uppercase tracking-wider block mb-2">
-                Services
-              </span>
-              <div className="flex flex-col gap-2 pl-4">
-                {services.map((s) => (
-                  <Link
-                    key={s.title}
-                    href={s.href}
-                    className="text-foreground py-1"
-                    onClick={() => setIsOpen(false)}>
-                    {s.title}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <Link
+              href="/#services"
+              className="font-semibold text-foreground"
+              onClick={() => setIsOpen(false)}>
+              Services
+            </Link>
 
             <Link
               href="/contact"
