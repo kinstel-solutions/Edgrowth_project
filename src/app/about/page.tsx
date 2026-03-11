@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export default function AboutPage() {
   return (
-    <div className="bg-white pb-16">
+    <div className="bg-background pb-16">
       {/* Header */}
       <div className="bg-slate-900 text-white py-20">
         <div className="container mx-auto px-4 text-center animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About EnviroLko</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">About EdGrowth Consultants LLP</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            We are an environmental IoT company with a mission to make air quality monitoring accurate, affordable, and accessible.
+            Established Edtech firm with a focus on quality learning, committed to academic excellence and career readiness.
           </p>
         </div>
       </div>
@@ -17,72 +18,66 @@ export default function AboutPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <div>
-                <h2 className="text-3xl font-bold text-slate-900 mb-6">Pioneering Environmental Intelligence</h2>
-                <div className="space-y-4 text-slate-600 leading-relaxed">
-                    <p>
-                        Founded in 2015, EnviroLko has quickly grown to become a global leader in environmental monitoring solutions. We specialize in manufacturing accurate air quality monitoring systems and advanced data analytics software.
-                    </p>
-                    <p>
-                        Our technology is currently monitoring the environmental health of more than 250 million people across 80+ countries. We have successfully deployed over 3,500 installations for smart cities, industrial zones, airports, and research institutes.
-                    </p>
-                    <p>
-                        At EnviroLko, we believe that data is the key to solving the global air pollution crisis. By providing real-time, hyper-local data, we empower communities and authorities to take timely, data-driven actions.
-                    </p>
+            <FadeIn direction="right">
+                <h2 className="text-3xl font-bold text-foreground mb-6">About the Company</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <ul className="list-disc pl-5 space-y-2">
+                        <li>Established Edtech firm with a focus on quality learning.</li>
+                        <li>Offers industry relevant undergraduate and postgraduate programs.</li>
+                        <li>Student-centric approach with an experienced team of academic counselors.</li>
+                        <li>Commitment to academic excellence and career readiness.</li>
+                        <li>Thousands of students guided toward successful careers.</li>
+                        <li>Partnered with more than 10 top universities across pan India.</li>
+                    </ul>
                 </div>
-            </div>
-            <div className="relative h-[400px] bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
-                 <img src="https://oizom.com/wp-content/uploads/2022/09/Oizom_Robust_Air_Quality_Monitor.webp" alt="EnviroLko Device" className="w-full h-full object-cover" />
+            </FadeIn>
+            <FadeIn direction="left" className="h-full">
+              <div className="relative h-[400px] bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
+                   <img src="/education_hero.png" alt="EdGrowth Students" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+            </FadeIn>
+        </div>
+
+        {/* Vision and Mission */}
+        <div className="mb-20 flex justify-center">
+            <div className=" mx-0 flex justify-center flex-col gap-16">
+                {/* Vision Section */}
+                <FadeIn direction="left" delay={100} className="w-full flex justify-start">
+                  <div className="text-left border-l-4 border-blue-600 pl-6 py-2 md:w-3/4">
+                      <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">Our Vision</h2>
+                      <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed">
+                          To be a leading institution delivering accessible and high-quality education.
+                      </p>
+                  </div>
+                </FadeIn>
+
+                {/* Mission Section */}
+                <FadeIn direction="right" delay={200} className="w-full flex justify-end pl-190">
+                  <div className="text-right border-r-4 border-blue-600 pr-6 py-2 md:w-full ">
+                      <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-8 tracking-tight">Our Mission</h2>
+                      <ul className="space-y-4 text-lg text-muted-foreground">
+                          <li className="leading-relaxed">To nurture skilled, knowledge, and ethical professionals.</li>
+                          <li className="leading-relaxed">To bridge the gap between education and industry needs.</li>
+                          <li className="leading-relaxed">Provide expert guidance to career aspirants seeking career counselling.</li>
+                          <li className="leading-relaxed">Strong academic and student support.</li>
+                      </ul>
+                  </div>
+                </FadeIn>
             </div>
         </div>
 
-        {/* Values/Stats */}
-        <div className="bg-blue-50 rounded-3xl p-12 mb-20">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-slate-900">Why the world trusts EnviroLko</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-xl shadow-sm text-center hover-scale">
-                    <div className="text-blue-600 mb-4 flex justify-center">
-                        <CheckCircle2 size={40} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">Patent-Pending Technology</h3>
-                    <p className="text-slate-600 text-sm">
-                        Our "e-breathing" technology ensures sensor longevity and high data accuracy even in extreme weather conditions.
-                    </p>
-                </div>
-                <div className="bg-white p-8 rounded-xl shadow-sm text-center hover-scale">
-                    <div className="text-blue-600 mb-4 flex justify-center">
-                        <CheckCircle2 size={40} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">Scalable Solutions</h3>
-                    <p className="text-slate-600 text-sm">
-                        From a single device to a city-wide network of 500+ monitors, our infrastructure scales effortlessly.
-                    </p>
-                </div>
-                <div className="bg-white p-8 rounded-xl shadow-sm text-center hover-scale">
-                    <div className="text-blue-600 mb-4 flex justify-center">
-                        <CheckCircle2 size={40} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">Data Security</h3>
-                    <p className="text-slate-600 text-sm">
-                        We prioritize data integrity with end-to-end encryption and secure cloud storage protocols.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        {/* Global Presence Map (Abstract) */}
-        <div className="text-center">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Our Global Footprint</h2>
-            <div className="bg-slate-900 rounded-2xl p-8 h-[300px] flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://oizom.com/wp-content/uploads/2022/08/Oizom_Ambient_Air_Quality_Monitoring_Equipments.webp')] bg-cover bg-center"></div>
-                <div className="relative z-10">
-                    <p className="text-4xl md:text-6xl font-bold text-white mb-2">80+</p>
-                    <p className="text-blue-300 uppercase tracking-widest font-semibold">Countries</p>
-                </div>
-            </div>
-        </div>
+        <FadeIn direction="up">
+          <div className="text-center">
+              <h2 className="text-3xl font-bold text-foreground mb-8">Our Reach</h2>
+              <div className="bg-slate-900 rounded-2xl p-8 h-[300px] flex items-center justify-center relative overflow-hidden group">
+                  <div className="absolute inset-0 opacity-20 bg-[url('/education_hero.png')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
+                  <div className="relative z-10">
+                      <p className="text-4xl md:text-6xl font-bold text-white mb-2">10+</p>
+                      <p className="text-blue-300 uppercase tracking-widest font-semibold">Top Universities Partners</p>
+                  </div>
+              </div>
+          </div>
+        </FadeIn>
       </div>
     </div>
   );

@@ -1,60 +1,67 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export default function ContactPage() {
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* Header */}
       <div className="bg-slate-900 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
+        <FadeIn className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
             Have questions about our products or solutions? Our team is here to help.
           </p>
-        </div>
+        </FadeIn>
       </div>
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12 bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-12 bg-card rounded-2xl shadow-sm border overflow-hidden">
           
           {/* Contact Form */}
-          <div className="p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a message</h2>
+          <FadeIn direction="right" className="p-8 md:p-12">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Send us a message</h2>
             <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="firstName" className="text-sm font-medium text-slate-700">First Name</label>
-                  <input type="text" id="firstName" className="w-full h-10 px-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John" />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="lastName" className="text-sm font-medium text-slate-700">Last Name</label>
-                  <input type="text" id="lastName" className="w-full h-10 px-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Doe" />
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-medium text-foreground">Name <span className="text-muted-foreground font-normal">(Optional)</span></label>
+                <input type="text" id="name" className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" placeholder="John Doe" />
               </div>
               
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-slate-700">Email Address</label>
-                <input type="email" id="email" className="w-full h-10 px-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@company.com" />
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="text-sm font-medium text-foreground">Phone Number</label>
+                  <input type="tel" id="phone" required className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" placeholder="+1-555-0123-4567" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium text-foreground">Email Address</label>
+                  <input type="email" id="email" required className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" placeholder="john@example.com" />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="location" className="text-sm font-medium text-foreground">Location <span className="text-muted-foreground font-normal">(Optional)</span></label>
+                  <input type="text" id="location" className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" placeholder="City, Country" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="programs" className="text-sm font-medium text-foreground">Interested Programs <span className="text-muted-foreground font-normal">(Optional)</span></label>
+                  <input type="text" id="programs" className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. MBA, BCA" />
+                </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium text-slate-700">Company / Organization</label>
-                <input type="text" id="company" className="w-full h-10 px-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Company Ltd." />
+                <label htmlFor="otherInfo" className="text-sm font-medium text-foreground">Other Info <span className="text-muted-foreground font-normal">(Optional)</span></label>
+                <textarea id="otherInfo" rows={4} className="w-full p-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Any additional information..." />
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
-                <textarea id="message" rows={4} className="w-full p-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your project requirements..." />
-              </div>
-
-              <button type="submit" className="w-full h-12 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors">
+              <button type="submit" className="w-full h-12 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors">
                 Submit Request
               </button>
             </form>
-          </div>
+          </FadeIn>
 
           {/* Contact Info */}
-          <div className="bg-slate-900 text-white p-8 md:p-12 flex flex-col justify-between">
+          <FadeIn direction="left" className="bg-slate-900 text-white p-8 md:p-12 flex flex-col justify-between h-full">
             <div>
               <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
               <div className="space-y-8">
@@ -75,7 +82,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">United States</h3>
                     <p className="text-slate-300 leading-relaxed">
-                      EnviroLko Instruments Pvt Ltd<br/>
+                      EdGrowth Consultants LLP<br/>
                       789 Enterprise Blvd, Suite 100<br/>
                       Tech City, CA 90210
                     </p>
@@ -97,7 +104,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
                     <p className="text-slate-300">
-                      <a href="mailto:info@envirolko-placeholder.com" className="hover:text-white transition-colors">info@envirolko-placeholder.com</a>
+                      <a href="mailto:info@edgrowth.com" className="hover:text-white transition-colors">info@edgrowth.com</a>
                     </p>
                   </div>
                 </div>
@@ -109,7 +116,7 @@ export default function ContactPage() {
                 We respect your privacy. Your information will only be used to contact you regarding your inquiry.
               </p>
             </div>
-          </div>
+          </FadeIn>
 
         </div>
       </div>

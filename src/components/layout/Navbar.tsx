@@ -80,8 +80,25 @@ export function Navbar() {
                 <NavigationMenuLink asChild>
                   <Link
                     href="/#services"
-                    className={navigationMenuTriggerStyle()}>
+                    className={navigationMenuTriggerStyle()}
+                    onClick={(e) => {
+                      const el = document.getElementById("services");
+                      if (el) {
+                        e.preventDefault();
+                        el.scrollIntoView({ behavior: "smooth" });
+                        window.history.pushState(null, "", "/#services");
+                      }
+                    }}>
                     Services
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/about"
+                    className={navigationMenuTriggerStyle()}>
+                    About Us
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -142,8 +159,23 @@ export function Navbar() {
             <Link
               href="/#services"
               className="font-semibold text-foreground"
-              onClick={() => setIsOpen(false)}>
+              onClick={(e) => {
+                setIsOpen(false);
+                const el = document.getElementById("services");
+                if (el) {
+                  e.preventDefault();
+                  el.scrollIntoView({ behavior: "smooth" });
+                  window.history.pushState(null, "", "/#services");
+                }
+              }}>
               Services
+            </Link>
+
+            <Link
+              href="/about"
+              className="font-semibold text-foreground"
+              onClick={() => setIsOpen(false)}>
+              About Us
             </Link>
 
             <Link

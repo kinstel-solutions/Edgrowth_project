@@ -46,12 +46,7 @@ export function CourseCard({
             </span>
           ))}
         </div>
-        <Link
-          href={`/courses#${name.toLowerCase()}`}
-          className="w-full inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-        >
-          View Details
-        </Link>
+
       </div>
     </div>
   );
