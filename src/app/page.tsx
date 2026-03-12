@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      <section className="relative py-8 md:py-32 overflow-hidden bg-background">
+      <section className="relative py-8 md:py-12 overflow-hidden bg-background">
         <div className="container mx-auto px-4 relative z-10 animate-fade-in-up">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
@@ -188,15 +188,7 @@ export default function Home() {
                 features={["Postgraduate", "Online", "Technical"]}
               />
             </FadeIn>
-            <FadeIn delay={300} direction="up">
-              <CourseCard
-                tag="Master"
-                name="Online M.Com"
-                description="Master of Commerce. Advanced studies in accounting, economics, and business strategies."
-                image="/counselling.png" // Placeholder
-                features={["Postgraduate", "Online", "Accounting"]}
-              />
-            </FadeIn>
+            
             <FadeIn delay={400} direction="up">
               <CourseCard
                 tag="Bachelor"
@@ -213,6 +205,15 @@ export default function Home() {
                 description="Enhance your skills with Coursera certifications."
                 image="/counselling.png" // Placeholder
                 features={["Certification", "Online", "Skill Dev"]}
+              />
+            </FadeIn>
+            <FadeIn delay={300} direction="up">
+              <CourseCard
+                tag="Master"
+                name="Online M.Com"
+                description="Master of Commerce. Advanced studies in accounting, economics, and business strategies."
+                image="/counselling.png" // Placeholder
+                features={["Postgraduate", "Online", "Accounting"]}
               />
             </FadeIn>
           </div>

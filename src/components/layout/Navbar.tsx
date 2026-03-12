@@ -44,8 +44,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-      <div className="flex h-16 items-center px-4 container mx-auto justify-between">
+    <div className="sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60  z-50">
+      <div className="flex h-16 items-center px-4 container sticky top-0 z-50 mx-auto justify-between">
         <Link
           href="/"
           className="font-bold text-2xl tracking-tight text-primary flex items-center gap-2">

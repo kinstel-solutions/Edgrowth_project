@@ -49,7 +49,7 @@ export function CourseCard({
 
         <Link
           href="/contact"
-          className="inline-flex h-full w-full md:w-3/4 py-2  items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+          className="inline-flex h-full w-full py-2  items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
         >
           Find Best {name} Programs
         </Link>
