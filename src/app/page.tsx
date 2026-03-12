@@ -14,22 +14,48 @@ import {
 } from "lucide-react";
 import { CourseCard } from "@/components/ui/CourseCard";
 import { ServiceCard } from "@/components/ui/ServiceCard";
+import { ExpandableServiceCard } from "@/components/ui/ExpandableServiceCard";
 import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { InDemandSkills } from "@/components/InDemandSkills";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden bg-background">
+      <section className="relative py-8 md:py-32 overflow-hidden bg-background">
         <div className="container mx-auto px-4 relative z-10 animate-fade-in-up">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
-              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-xl mb-6">
+              {/* <div className="inline-flex items-center ml-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-xl mb-6">
                 <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
                 Best Online Education Programs 2026
+              </div> */}
+               <div className="mb-8 sm:mb-10">
+                <p className="text-md text-muted-foreground mb-3 font-medium">
+                  High-Paying Careers
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Digital Marketing",
+                    "Artificial Intelligence",
+                    "Data Science",
+                    "Business Analytics",
+                    "Cybersecurity",
+                    "Cloud Computing",
+                    "Full Stack Development"
+                  ].map((skill) => (
+                    <Link 
+                      key={skill} 
+                      href="/contact"
+                      className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                    >
+                      {skill}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
+              <h1 className="text-4xl font-extrabold md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
                 Empowering Education <br className="hidden lg:block" />
                 <span className="text-primary block mt-2">Building Careers</span>
               </h1>
@@ -50,6 +76,34 @@ export default function Home() {
                 >
                   Book Counselling
                 </Link>
+              </div>
+
+              {/* Accreditation Badges */}
+              <div className="mt-10">
+                <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wider font-medium">
+                  Recognised & Accredited Programs
+                </p>
+                <div className="flex flex-wrap items-center gap-4">
+                  {[
+                    { src: "/accredation-images/ugc.png", alt: "UGC" },
+                    { src: "/accredation-images/naac.png", alt: "NAAC" },
+                    { src: "/accredation-images/nirf.jpg", alt: "NIRF" },
+                    { src: "/accredation-images/iirf-trans.png", alt: "IIRF" },
+                    { src: "/accredation-images/wes.jpg", alt: "WES" },
+                  ].map((badge) => (
+                    <div
+                      key={badge.alt}
+                      className="relative h-16 w-24 sm:h-24 sm:w-32 bg-white rounded-lg border border-border/50 p-1.5 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      <Image
+                        src={badge.src}
+                        alt={badge.alt}
+                        fill
+                        className="object-contain p-1"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             
@@ -171,6 +225,16 @@ export default function Home() {
               View All Courses <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
+
+          {/* <div className="mt-10 text-center">
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+            >
+              Get Free Counselling
+              <Phone className="ml-2 h-4 w-4" />
+            </Link>
+          </div> */}
         </div>
       </section>
 
@@ -185,7 +249,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <FadeIn delay={100} direction="up">
             <ServiceCard
               icon={<Users className="h-8 w-8 text-primary" />}
@@ -210,6 +274,28 @@ export default function Home() {
               colorClass="bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400"
             />
           </FadeIn>
+          <FadeIn delay={400} direction="up">
+             <ExpandableServiceCard
+              icon={<Languages className="h-8 w-8 text-emerald-600 dark:text-emerald-400" />}
+              title="Multi-lingual Support"
+              description="Get expert guidance and support in your preferred regional language."
+              colorClass="bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
+              details={[
+                "English","Hindi", "Bengali", "Marathi", "Telugu", "Tamil", "Gujarati", "Urdu", "Kannada", "Odia", "Malayalam", "Punjabi"
+              ]}
+            />
+          </FadeIn>
+          
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/contact"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+          >
+            Talk to Our Experts
+            <Phone className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </section>
       
@@ -237,7 +323,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-              Right Guidance From Experts
+               Expert Guidance
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               EdGrowth has a team of experts giving you the right guidance for your successful career ahead.
@@ -270,8 +356,20 @@ export default function Home() {
                 </div>
               </FadeIn>
           </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+            >
+              Book Expert Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
+
+      <InDemandSkills />
 
       {/* Why To Choose Us */}
       <section className="container mx-auto px-4 py-16">

@@ -40,7 +40,7 @@ export default function AboutPage() {
 
         {/* Vision and Mission */}
         <div className="mb-20 flex justify-center">
-            <div className=" mx-0 flex justify-center flex-col gap-16">
+            <div className="mx-0 flex justify-center flex-col gap-16 overflow-hidden w-full">
                 {/* Vision Section */}
                 <FadeIn direction="left" delay={100} className="w-full flex justify-start">
                   <div className="text-left border-l-4 border-blue-600 pl-6 py-2 md:w-3/4">
@@ -52,7 +52,7 @@ export default function AboutPage() {
                 </FadeIn>
 
                 {/* Mission Section */}
-                <FadeIn direction="right" delay={200} className="w-full flex justify-end pl-190">
+                <FadeIn direction="right" delay={200} className="w-full flex justify-end md:pl-24">
                   <div className="text-right border-r-4 border-blue-600 pr-6 py-2 md:w-full ">
                       <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-8 tracking-tight">Our Mission</h2>
                       <ul className="space-y-4 text-lg text-muted-foreground">

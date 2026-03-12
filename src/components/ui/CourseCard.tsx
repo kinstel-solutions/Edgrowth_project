@@ -40,13 +40,19 @@ export function CourseCard({
           {features.map((f) => (
             <span
               key={f}
-              className="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground border border-secondary"
+              className="inline-flex items-center rounded-md bg-primary/15 px-2 py-1 text-xs font-medium text-secondary-foreground border border-secondary"
             >
               {f}
             </span>
           ))}
         </div>
 
+        <Link
+          href="/contact"
+          className="inline-flex h-full w-full md:w-3/4 py-2  items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+        >
+          Find Best {name} Programs
+        </Link>
       </div>
     </div>
   );
