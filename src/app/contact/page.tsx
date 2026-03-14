@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Career Counselling & Support | EdGrowth",
+  description: "Get in touch with EdGrowth Consultants for expert career counselling, admission support, and financing solutions. Visit our Lucknow office or call us today.",
+};
 
 export default function ContactPage() {
   return (
@@ -30,7 +36,7 @@ export default function ContactPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium text-foreground">Phone Number</label>
-                  <input type="tel" id="phone" required className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" placeholder="+1-555-0123-4567" />
+                  <input type="tel" id="phone" required className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" placeholder="+91 85275-11409" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-foreground">Email Address</label>
@@ -68,23 +74,11 @@ export default function ContactPage() {
                 <div className="flex gap-4">
                   <MapPin className="text-blue-400 shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">India (Head Office)</h3>
+                    <h3 className="font-semibold text-lg mb-1">Head Office</h3>
                     <p className="text-slate-300 leading-relaxed">
-                      123 Innovation Drive, Tech Park,<br/>
-                      Metropolis, State,<br/>
-                      India – 123456
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <MapPin className="text-blue-400 shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">United States</h3>
-                    <p className="text-slate-300 leading-relaxed">
-                      EdGrowth Consultants LLP<br/>
-                      789 Enterprise Blvd, Suite 100<br/>
-                      Tech City, CA 90210
+                      62, Guru Gobind Singh Marg,<br/>
+                      Lucknow, Uttar Pradesh,<br/>
+                      India – 226001
                     </p>
                   </div>
                 </div>
@@ -94,7 +88,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Call Us</h3>
                     <p className="text-slate-300">
-                      <a href="tel:+155501234567" className="hover:text-white transition-colors">+1-555-0123-4567</a>
+                      <a href="tel:8527511409" className="hover:text-white transition-colors">+91 8527511409</a>
                     </p>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
@@ -10,7 +10,64 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "EdGrowth Consultants | Educational Counselling & Placement",
-  description: "Expert educational counselling for MBA, BBA, MCOM, BCOM and professional placement services.",
+  description: "EdGrowth Consultants LLP is a premier educational consultancy in Lucknow providing expert counselling for MBA, BBA, M.Com, B.Com, and professional placement services.",
+  keywords: [
+    "EdGrowth",
+    "Educational Counselling",
+    "Career Guidance Lucknow",
+    "Online MBA",
+    "BBA Programs",
+    "Career Placement Services",
+    "Higher Education India",
+    "Student Counselling",
+    "University Admissions"
+  ],
+  authors: [{ name: "EdGrowth Consultants" }],
+  creator: "EdGrowth Consultants",
+  publisher: "EdGrowth Consultants",
+  formatDetection: {
+    email: false,
+    address: true,
+    telephone: true,
+  },
+  openGraph: {
+    title: "EdGrowth Consultants | Educational Counselling & Placement",
+    description: "Expert educational counselling for MBA, BBA, M.Com, B.Com and professional placement services.",
+    url: "https://edgrowth.info", // Replace with actual domain when ready
+    siteName: "EdGrowth Consultants",
+    images: [
+      {
+        url: "/hero-v2.png",
+        width: 1200,
+        height: 630,
+        alt: "EdGrowth Consultants Hero Image",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EdGrowth Consultants | Educational Counselling & Placement",
+    description: "Expert educational counselling for MBA, BBA, M.Com, B.Com and professional placement services.",
+    images: ["/hero-v2.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -19,8 +76,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased min-h-screen flex flex-col bg-background text-foreground`}>
+    <html lang="en" className="scroll-smooth min-h-screen overflow-x-hidden" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden relative`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -28,7 +85,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1">
+          <main className="flex-1 pt-16">
             {children}
           </main>
           <Footer />

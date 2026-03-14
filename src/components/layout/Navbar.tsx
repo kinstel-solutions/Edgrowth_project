@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { ButtonCTA } from "@/components/ui/ButtonCTA";
 
 const courses = [
   {
@@ -44,8 +45,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="sticky top-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60  z-50">
-      <div className="flex h-16 items-center px-4 container sticky top-0 z-50 mx-auto justify-between">
+    <div className="fixed top-0 left-0 right-0 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60  z-50">
+      <div className="flex h-16 items-center px-4 container mx-auto justify-between">
         <Link
           href="/"
           className="font-bold text-2xl tracking-tight text-primary flex items-center gap-2">
@@ -117,11 +118,11 @@ export function Navbar() {
 
         <div className="hidden lg:flex gap-4 items-center">
           <ThemeToggle />
-          <Link
+          <ButtonCTA
             href="/contact"
-            className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+            size="navbar">
             Get In Touch
-          </Link>
+          </ButtonCTA>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -186,12 +187,13 @@ export function Navbar() {
             </Link>
 
             <div className="h-px bg-border my-2"></div>
-            <Link
-              href="/contact"
-              className="text-center rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
-              onClick={() => setIsOpen(false)}>
-              Get In Touch
-            </Link>
+            <div onClick={() => setIsOpen(false)}>
+              <ButtonCTA
+                href="/contact"
+                size="full">
+                Get In Touch
+              </ButtonCTA>
+            </div>
           </nav>
         </div>
       )}

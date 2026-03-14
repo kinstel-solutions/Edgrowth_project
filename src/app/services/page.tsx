@@ -1,5 +1,11 @@
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { Users, Briefcase, DollarSign, GraduationCap, Languages } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services | EdGrowth Consultants",
+  description: "Explore our range of educational services: MBA/BBA counselling, training & placement, and financing options. We empower careers through quality learning.",
+};
 
 export default function ServicesPage() {
   const services = [

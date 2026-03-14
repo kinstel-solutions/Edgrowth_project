@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { ButtonCTA } from "@/components/ui/ButtonCTA";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | EdGrowth Consultants LLP",
+  description: "Learn about EdGrowth Consultants, a premier EdTech firm in Lucknow. Our mission is to bridge the gap between quality education and industry needs through expert counselling.",
+};
 
 export default function AboutPage() {
   return (
@@ -16,7 +23,7 @@ export default function AboutPage() {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 overflow-hidden">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <FadeIn direction="right">
                 <h2 className="text-3xl font-bold text-foreground mb-6">About the Company</h2>
@@ -30,11 +37,19 @@ export default function AboutPage() {
                         <li>Partnered with more than 10 top universities across pan India.</li>
                     </ul>
                 </div>
+                <ButtonCTA
+                  href="/contact"
+                  className="mt-8"
+                  showIcon
+                >
+                  Get In Touch
+                </ButtonCTA>
             </FadeIn>
             <FadeIn direction="left" className="h-full">
               <div className="relative h-[400px] bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
                    <img src="/education_hero.png" alt="EdGrowth Students" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
+              
             </FadeIn>
         </div>
 
@@ -52,7 +67,7 @@ export default function AboutPage() {
                 </FadeIn>
 
                 {/* Mission Section */}
-                <FadeIn direction="right" delay={200} className="w-full flex justify-end md:pl-24">
+                <FadeIn direction="right" delay={200} className="w-full flex flex-col items-end  md:pl-24">
                   <div className="text-right border-r-4 border-blue-600 pr-6 py-2 md:w-full ">
                       <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-8 tracking-tight">Our Mission</h2>
                       <ul className="space-y-4 text-lg text-muted-foreground">
@@ -62,12 +77,22 @@ export default function AboutPage() {
                           <li className="leading-relaxed">Strong academic and student support.</li>
                       </ul>
                   </div>
+                  <ButtonCTA
+                  href="/contact"
+                  className="mt-8 border-primary text-secondary-foreground hover:bg-primary/80"
+                  variant="outline"
+                  showIcon
+                >
+                 Take the First Step To Success
+                </ButtonCTA>
                 </FadeIn>
             </div>
         </div>
 
         <FadeIn direction="up">
+            
           <div className="text-center">
+            
               <h2 className="text-3xl font-bold text-foreground mb-8">Our Reach</h2>
               <div className="bg-slate-900 rounded-2xl p-8 h-[300px] flex items-center justify-center relative overflow-hidden group">
                   <div className="absolute inset-0 opacity-20 bg-[url('/education_hero.png')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>

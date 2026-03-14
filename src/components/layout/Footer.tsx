@@ -17,32 +17,7 @@ export function Footer() {
           <p className="text-sm leading-relaxed">
             EdGrowth Consultants LLP is a premier educational consultancy providing online education counselling and financing services. We help you achieve your dream qualification.
           </p>
-          <div className="flex gap-4 pt-2">
-            <Link
-              href="#"
-              target="_blank"
-              className="hover:text-primary transition-colors">
-              <Linkedin size={20} />
-            </Link>
-            <Link
-              href="#"
-              target="_blank"
-              className="hover:text-primary transition-colors">
-              <Twitter size={20} />
-            </Link>
-            <Link
-              href="#"
-              target="_blank"
-              className="hover:text-primary transition-colors">
-              <Facebook size={20} />
-            </Link>
-            <Link
-              href="#"
-              target="_blank"
-              className="hover:text-primary transition-colors">
-              <Youtube size={20} />
-            </Link>
-          </div>
+
         </div>
 
         {/* Quick Links */}
@@ -85,10 +60,10 @@ export function Footer() {
           <h3 className="font-semibold text-foreground mb-4">Head Office</h3>
           <ul className="space-y-2 text-sm">
             <li>EdGrowth Consultants LLP</li>
-            <li>Educational Consultant</li>
-            <li>Lucknow, Uttar Pradesh</li>
+            <li>62, Guru Gobind Singh Marg</li>
+            <li>Lucknow, Uttar Pradesh 226001</li>
             <li className="pt-2 text-primary hover:underline">
-              <a href="tel:+911234567890">+91 123-456-7890</a>
+              <a href="tel:8527511409">+91 8527511409</a>
             </li>
             <li className="text-primary hover:underline">
               <a href="mailto:info@edgrowth.com">info@edgrowth.com</a>

@@ -1,5 +1,12 @@
 import { CourseCard } from "@/components/ui/CourseCard";
 import { BookOpen } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Online Courses & Degrees | EdGrowth Consultants",
+  description: "Explore top-tier online MBA, BBA, M.Com, and B.Com programs. Get industry-relevant skills and placement assistance with EdGrowth Consultants.",
+  keywords: ["Online MBA", "Online BBA", "Best M.Com Degrees", "Distance Learning Lucknow"],
+};
 
 export default function CoursesPage() {
   const courses = [

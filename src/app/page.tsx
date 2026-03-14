@@ -18,12 +18,15 @@ import { ExpandableServiceCard } from "@/components/ui/ExpandableServiceCard";
 import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { InDemandSkills } from "@/components/InDemandSkills";
+import { ButtonCTA } from "@/components/ui/ButtonCTA";
+import { UniversityCarousel } from "@/components/ui/UniversityCarousel";
+import { UniversityCard } from "@/components/ui/UniversityCard";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      <section className="relative py-8 md:py-12 overflow-hidden bg-background">
+      <section className="relative py-8 pb-0 md:py-12 overflow-hidden bg-background">
         <div className="container mx-auto px-4 relative z-10 animate-fade-in-up">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
@@ -32,6 +35,7 @@ export default function Home() {
                 Best Online Education Programs 2026
               </div> */}
                <div className="mb-8 sm:mb-10">
+                <FadeIn delay={300} direction="left">
                 <p className="text-md text-muted-foreground mb-3 font-medium">
                   High-Paying Careers
                 </p>
@@ -48,37 +52,36 @@ export default function Home() {
                     <Link 
                       key={skill} 
                       href="/contact"
-                      className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                      className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground shimmer"
                     >
                       {skill}
                     </Link>
                   ))}
                 </div>
+                </FadeIn>
               </div>
-              <h1 className="text-4xl font-extrabold md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
-                Empowering Education <br className="hidden lg:block" />
-                <span className="text-primary block mt-2">Building Careers</span>
+        <FadeIn delay={60} direction="left">
+              <h1 className="text-4xl font-extrabold md:text-4xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
+                Need help finding the <span className="text-primary inline md:block md:mt-2">best online program</span> for your Career?
               </h1>
+              </FadeIn>
+              <FadeIn delay={150} direction="down">
               <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg">
                 We are an established EdTech firm with a focus on quality learning. Offers industry relevant undergraduate and postgraduate programs. Partnered with more than 10 top universities across pan India.
               </p>
+             </FadeIn>
+             <FadeIn delay={200} direction="right">
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/courses"
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-                >
-                  Explore Courses
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background/50 px-8 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-                >
-                  Book Counselling
-                </Link>
+                <ButtonCTA href="/contact" showIcon>
+                  Get a Free Expert Consultation
+                </ButtonCTA>
+                <ButtonCTA href="/about" variant="outline">
+                  About EdGrowth
+                </ButtonCTA>
               </div>
-
+         </FadeIn>
               {/* Accreditation Badges */}
+              <FadeIn delay={300} direction="left">
               <div className="mt-10">
                 <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wider font-medium">
                   Recognised & Accredited Programs
@@ -105,16 +108,18 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+              </FadeIn>
             </div>
-            
-            <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl hidden md:block">
+            <FadeIn delay={60} direction="right">
+              <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl hidden md:block">
               <Image
-                src="/education_hero.png"
-                alt="Students studying"
+                src="/hero-v2.png"
+                alt="Professional education and career growth"
                 fill
                 className="w-full h-full  object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -150,7 +155,7 @@ export default function Home() {
       </section>
 
       {/* Courses Showcase */}
-      <section id="courses" className="bg-muted/30 py-16">
+      <section id="courses" className="bg-muted/30 py-16 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div className="max-w-2xl">
@@ -184,7 +189,7 @@ export default function Home() {
                 tag="Master"
                 name="Online MCA"
                 description="Master of Computer Applications. Develop advanced skills in IT and software."
-                image="/education_hero.png" // Placeholder
+                image="/courses-v2.png"
                 features={["Postgraduate", "Online", "Technical"]}
               />
             </FadeIn>
@@ -194,7 +199,7 @@ export default function Home() {
                 tag="Bachelor"
                 name="Online BBA / BCA"
                 description="Undergraduate programs building strong foundations in business or tech."
-                image="/education_hero.png" // Placeholder
+                image="/courses-v2.png"
                 features={["Undergraduate", "Online", "Fundamental"]}
               />
             </FadeIn>
@@ -203,7 +208,7 @@ export default function Home() {
                 tag="Certification"
                 name="Online Certification"
                 description="Enhance your skills with Coursera certifications."
-                image="/counselling.png" // Placeholder
+                image="/courses-v2.png"
                 features={["Certification", "Online", "Skill Dev"]}
               />
             </FadeIn>
@@ -212,7 +217,7 @@ export default function Home() {
                 tag="Master"
                 name="Online M.Com"
                 description="Master of Commerce. Advanced studies in accounting, economics, and business strategies."
-                image="/counselling.png" // Placeholder
+                image="/courses-v2.png"
                 features={["Postgraduate", "Online", "Accounting"]}
               />
             </FadeIn>
@@ -301,26 +306,105 @@ export default function Home() {
       </section>
       
 {/* Admission & Support */}
-      <section className="bg-slate-900 text-white py-16 rounded-3xl mx-4 mb-16 px-8 md:px-16 text-center">
-         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Admission & Support</h2>
+      <section className="bg-foreground text-white py-16 rounded-3xl mx-4 mb-16 px-8 md:px-16 text-center">
+         <h2 className="text-3xl text-primary-foreground font-bold tracking-tight sm:text-4xl mb-8">Admission & Support</h2>
          <div className="grid md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto">
-             <FadeIn delay={100} direction="up" className="bg-slate-800 p-6 rounded-xl border border-slate-700">
-                 <h3 className="text-xl font-semibold mb-3">Seamless Process</h3>
-                 <p className="text-slate-300">Simple admission process supported by dedicated student counseling throughout your program journey.</p>
+             <FadeIn delay={100} direction="up" className="bg-primary/10 p-6 rounded-xl border border-slate-700">
+                 <h3 className="text-xl text-primary-foreground font-semibold mb-3">Seamless Process</h3>
+                 <p className="text-primary-foreground">Simple admission process supported by dedicated student counseling throughout your program journey.</p>
              </FadeIn>
-             <FadeIn delay={200} direction="up" className="bg-slate-800 p-6 rounded-xl border border-slate-700">
-                 <h3 className="text-xl font-semibold mb-3">Financial Aid</h3>
-                 <p className="text-slate-300">Scholarship and flexible payment options available to ensure education is accessible to everyone.</p>
+             <FadeIn delay={200} direction="up" className="bg-primary/10 p-6 rounded-xl border border-slate-700">
+                 <h3 className="text-xl text-primary-foreground font-semibold mb-3">Financial Aid</h3>
+                 <p className="text-primary-foreground">Scholarship and flexible payment options available to ensure education is accessible to everyone.</p>
              </FadeIn>
-             <FadeIn delay={300} direction="up" className="bg-slate-800 p-6 rounded-xl border border-slate-700">
-                 <h3 className="text-xl font-semibold mb-3">Alumni & Placements</h3>
-                 <p className="text-slate-300">Access to a robust alumni network. Post-completion, gain access to recruitment drives and launchpad events for placements into top global MNCs.</p>
+             <FadeIn delay={300} direction="up" className="bg-primary/10 p-6 rounded-xl border border-slate-700">
+                 <h3 className="text-xl text-primary-foreground font-semibold mb-3">Alumni & Placements</h3>
+                 <p className="text-primary-foreground">Access to a robust alumni network. Post-completion, gain access to recruitment drives and launchpad events for placements into top global MNCs.</p>
              </FadeIn>
          </div>
       </section>
       
+      {/* Affiliated Universities */}
+      <section id="universities" className="container mx-auto px-4 py-8 overflow-hidden">
+        <div className="mb-12 text-center">
+          <FadeIn direction="up">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+              Our Affiliated Universities
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Partnered with India's top-tier institutions to deliver world-class online programs and industry-recognized degrees.
+            </p>
+          </FadeIn>
+        </div>
+
+        <UniversityCarousel 
+          universities={[
+            {
+              name: "Amity University",
+              description: "A global hub for industry-focused education, recognized for academic excellence and innovation.",
+              image: "/universities/amity.png"
+            },
+            {
+              name: "DY Patil University, Pune",
+              description: "Established excellence in Pune, offering quality value-based and cutting-edge education across diverse fields.",
+              image: "/universities/sharda.png"
+            },
+            {
+              name: "Jain University",
+              description: "A hub for learning in Bangalore, recognized for its focus on entrepreneurship, research, and sports.",
+              image: "/universities/sharda.png"
+            },
+            {
+              name: "Lovely Professional University",
+              description: "One of India's largest multidisciplinary universities with a sprawling 600-acre residential campus.",
+              image: "/universities/lpu.png"
+            },
+            {
+              name: "Manipal University Jaipur",
+              description: "A NAAC A+ accredited university known for academic excellence and industry-focused learning in Jaipur.",
+              image: "/universities/manipal.png"
+            },
+            {
+              name: "Noida International University",
+              description: "An A+ NAAC accredited university in Greater Noida, offering world-class infrastructure and global education.",
+              image: "/universities/sharda.png"
+            },
+            {
+              name: "Sharda University",
+              description: "A globally recognized institution in Greater Noida, fostering an inclusive and multicultural learning environment.",
+              image: "/universities/sharda.png"
+            },
+            {
+              name: "Shoolini University",
+              description: "A research-focused university in the Himalayas, ranked among top global institutions for innovation.",
+              image: "/universities/shoolini.png"
+            },
+            {
+              name: "Sikkim Manipal University",
+              description: "Pioneering quality education and healthcare in NE India, offering interdisciplinary programs.",
+              image: "/universities/shoolini.png"
+            },
+            {
+              name: "Uttaranchal University",
+              description: "A state-of-the-art institution in Dehradun, dedicated to research, innovation, and student-centric learning.",
+              image: "/universities/shoolini.png"
+            },
+            {
+              name: "Vivekanand Global University",
+              description: "A premier institution in Rajasthan focusing on holistic education, placements, and industry exposure.",
+              image: "/universities/manipal.png"
+            },
+            {
+              name: "Narsee Monjee University",
+              description: "A leading multi-disciplinary university with a legacy of excellence in management and professional studies.",
+              image: "/universities/nmims.png"
+            }
+          ]} 
+        />
+      </section>
+      
       {/* Right Guidance From Experts */}
-      <section className="bg-muted/30 py-16">
+      <section className="bg-muted/30 py-16 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
@@ -359,13 +443,9 @@ export default function Home() {
           </div>
 
           <div className="mt-10 text-center">
-            <Link
-              href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-            >
+            <ButtonCTA href="/contact" showIcon>
               Book Expert Consultation
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </ButtonCTA>
           </div>
         </div>
       </section>
@@ -421,19 +501,22 @@ export default function Home() {
           Contact us today to get expert counselling and take the first step towards your dream qualification.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-background px-8 text-sm font-medium text-primary shadow transition-colors hover:bg-accent"
+          <ButtonCTA 
+            href="/contact" 
+            className="bg-background text-primary hover:bg-accent border-none" 
+            variant="outline" 
+            showIcon 
+            iconType="phone"
           >
             Get Counselling
-            <Phone className="ml-2 h-4 w-4" />
-          </Link>
-          <Link
-            href="/about"
-            className="inline-flex h-12 items-center justify-center rounded-md border border-primary-foreground bg-transparent px-8 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary-foreground hover:text-primary"
+          </ButtonCTA>
+          <ButtonCTA 
+            href="/about" 
+            variant="outline" 
+            className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
           >
             Learn More
-          </Link>
+          </ButtonCTA>
         </div>
       </section>
     </div>
