@@ -24,7 +24,7 @@ export function ExpandableServiceCard({
   return (
     <div
       onClick={() => setIsExpanded(!isExpanded)}
-      className="group rounded-xl border border-border bg-card text-card-foreground p-6 shadow-sm hover:border-primary/50 flex flex-col items-center text-center transition-all cursor-pointer h-full"
+      className="group rounded-xl border border-border bg-card text-card-foreground p-6 shadow-md shadow-primary/30 hover:border-primary/50 flex flex-col items-center text-center transition-all cursor-pointer h-full"
     >
       <div
         className={cn(

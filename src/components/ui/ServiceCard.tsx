@@ -16,8 +16,8 @@ export function ServiceCard({
 }: ServiceCardProps) {
   return (
     <Link
-      href={`/services/${title.split(" ")[0].toLowerCase()}`}
-      className="group rounded-xl border border-border bg-card text-card-foreground p-6 shadow-sm hover-scale hover:border-primary/50 flex flex-col items-center text-center transition-colors h-full"
+      href={`/contact`}
+      className="group rounded-xl border border-border bg-card text-card-foreground p-6 shadow-md shadow-primary/30 hover-scale hover:border-primary/50  flex flex-col items-center text-center transition-colors h-full"
     >
       <div
         className={cn(

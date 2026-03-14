@@ -60,7 +60,7 @@ export function UniversityCarousel({ universities }: UniversityCarouselProps) {
     stopAutoPlay();
     autoPlayRef.current = setInterval(() => {
       scroll("right");
-    }, 3000);
+    }, 2000);// 685861743: customer number for edgrowth godaddy login
   }, []);
 
   const stopAutoPlay = useCallback(() => {

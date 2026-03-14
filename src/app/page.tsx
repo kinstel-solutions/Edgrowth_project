@@ -41,12 +41,13 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
+                    "Financial Advisory",
+                    "Investment Banking",
+                    "Corporate Finance",
                     "Digital Marketing",
                     "Artificial Intelligence",
                     "Data Science",
                     "Business Analytics",
-                    "Cybersecurity",
-                    "Cloud Computing",
                     "Full Stack Development"
                   ].map((skill) => (
                     <Link 
@@ -86,24 +87,27 @@ export default function Home() {
                 <p className="text-xs text-muted-foreground mb-3 uppercase tracking-wider font-medium">
                   Recognised & Accredited Programs
                 </p>
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-start gap-4 sm:gap-6">
                   {[
-                    { src: "/accredation-images/ugc.png", alt: "UGC" },
-                    { src: "/accredation-images/naac.png", alt: "NAAC" },
-                    { src: "/accredation-images/nirf.jpg", alt: "NIRF" },
-                    { src: "/accredation-images/iirf-trans.png", alt: "IIRF" },
-                    { src: "/accredation-images/wes.jpg", alt: "WES" },
+                    { src: "/accredation-images/naac.png", alt: "NAAC", title: "NAAC A+ Accredited" },
+                    { src: "/accredation-images/ugc.png", alt: "UGC", title: "UGC Entitled" },
+                    { src: "/accredation-images/nirf.jpg", alt: "NIRF", title: "NIRF Ranking 3" },
+                    { src: "/accredation-images/iirf-trans.png", alt: "IIRF", title: "Private University in North East" },
+                    { src: "/accredation-images/wes.jpg", alt: "WES", title: "WES Recognized" },
+                    { src: "/accredation-images/AICTE-Logo.webp", alt: "AICTE", title: "AICTE Recognized" },
                   ].map((badge) => (
-                    <div
-                      key={badge.alt}
-                      className="relative h-16 w-24 sm:h-24 sm:w-32 bg-white rounded-lg border border-border/50 p-1.5 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
-                    >
-                      <Image
-                        src={badge.src}
-                        alt={badge.alt}
-                        fill
-                        className="object-contain p-1"
-                      />
+                    <div key={badge.alt} className="flex flex-col items-center gap-2 group">
+                      <div className="relative h-16 w-24 sm:h-20 sm:w-28 bg-white rounded-lg border border-border/50 p-2 flex items-center justify-center shadow-sm hover:shadow-md shadow-primary/20 hover:border-primary/20 transition-all duration-300">
+                        <Image
+                          src={badge.src}
+                          alt={badge.alt}
+                          fill
+                          className="object-contain p-1.5 scale-110 hover:scale-120"
+                        />
+                      </div>
+                      <p className="text-[10px] sm:text-xs text-center font-semibold text-muted-foreground/80 max-w-[80px] sm:max-w-[100px] leading-tight group-hover:text-primary transition-colors">
+                        {badge.title}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -140,7 +144,7 @@ export default function Home() {
             </div>
           </FadeIn>
           <FadeIn delay={300} direction="up">
-            <div className="text-3xl font-bold text-primary">95%</div>
+            <div className="text-3xl font-bold text-primary">Upto 95%</div>
             <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
               <Award size={14} /> Placement Assistance
             </div>
@@ -189,7 +193,7 @@ export default function Home() {
                 tag="Master"
                 name="Online MCA"
                 description="Master of Computer Applications. Develop advanced skills in IT and software."
-                image="/courses-v2.png"
+                image="/mca_real.png"
                 features={["Postgraduate", "Online", "Technical"]}
               />
             </FadeIn>
@@ -199,7 +203,7 @@ export default function Home() {
                 tag="Bachelor"
                 name="Online BBA / BCA"
                 description="Undergraduate programs building strong foundations in business or tech."
-                image="/courses-v2.png"
+                image="/bba_bca_real.png"
                 features={["Undergraduate", "Online", "Fundamental"]}
               />
             </FadeIn>
@@ -208,7 +212,7 @@ export default function Home() {
                 tag="Certification"
                 name="Online Certification"
                 description="Enhance your skills with Coursera certifications."
-                image="/courses-v2.png"
+                image="/certification_real.png"
                 features={["Certification", "Online", "Skill Dev"]}
               />
             </FadeIn>
@@ -217,7 +221,7 @@ export default function Home() {
                 tag="Master"
                 name="Online M.Com"
                 description="Master of Commerce. Advanced studies in accounting, economics, and business strategies."
-                image="/courses-v2.png"
+                image="/mcom_real.png"
                 features={["Postgraduate", "Online", "Accounting"]}
               />
             </FadeIn>
@@ -297,7 +301,7 @@ export default function Home() {
         <div className="mt-10 text-center">
           <Link
             href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+            className="inline-flex h-12 items-center justify-center shimmer rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
           >
             Talk to Our Experts
             <Phone className="ml-2 h-4 w-4" />

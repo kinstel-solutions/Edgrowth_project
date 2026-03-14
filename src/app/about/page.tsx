@@ -47,7 +47,7 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn direction="left" className="h-full">
               <div className="relative h-[400px] bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
-                   <img src="/education_hero.png" alt="EdGrowth Students" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                   <img src="/counselling.png" alt="EdGrowth Students" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               
             </FadeIn>

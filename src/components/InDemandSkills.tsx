@@ -2,20 +2,15 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { 
   Megaphone, 
   BrainCircuit, 
-  Database, 
   LineChart, 
-  ShieldCheck, 
-  Cloud, 
+  Wallet, 
+  Landmark, 
+  Coins, 
   Code 
 } from "lucide-react";
 
 const skills = [
-  {
-    title: "Digital Marketing",
-    description: "Master SEO, social media, and performance marketing to drive business growth.",
-    icon: Megaphone,
-    color: "bg-pink-100 text-pink-600 dark:bg-pink-900/30 dark:text-pink-400"
-  },
+ 
   {
     title: "Artificial Intelligence",
     description: "Build intelligent systems and leverage machine learning algorithms for automation.",
@@ -23,9 +18,9 @@ const skills = [
     color: "bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
   },
   {
-    title: "Data Science",
-    description: "Extract meaningful insights from complex data sets using advanced statistical methods.",
-    icon: Database,
+    title: "Financial Advisory",
+    description: "Provide expert guidance on wealth management, investment strategies, and strategic financial planning.",
+    icon: Wallet,
     color: "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
   },
   {
@@ -35,15 +30,15 @@ const skills = [
     color: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
   },
   {
-    title: "Cybersecurity",
-    description: "Protect critical infrastructure and secure networks against evolving digital threats.",
-    icon: ShieldCheck,
+    title: "Investment Banking",
+    description: "Master mergers and acquisitions, capital raising, and complex financial modeling for global markets.",
+    icon: Landmark,
     color: "bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400"
   },
   {
-    title: "Cloud Computing",
-    description: "Architect and deploy scalable infrastructure on AWS, Azure, and Google Cloud.",
-    icon: Cloud,
+    title: "Corporate Finance",
+    description: "Strategize capital structure, budgeting, and investment decisions to drive organizational value.",
+    icon: Coins,
     color: "bg-cyan-100 text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400"
   },
   {
@@ -51,7 +46,13 @@ const skills = [
     description: "Develop robust end-to-end web applications using modern frameworks and databases.",
     icon: Code,
     color: "bg-violet-100 text-violet-600 dark:bg-violet-900/30 dark:text-violet-400"
-  }
+  },
+   {
+    title: "Digital Marketing",
+    description: "Master SEO, social media, and performance marketing to drive business growth.",
+    icon: Megaphone,
+    color: "bg-pink-100 text-pink-600 dark:bg-pink-900/30 dark:text-pink-400"
+  },
 ];
 
 export function InDemandSkills() {
@@ -62,7 +63,7 @@ export function InDemandSkills() {
           High-Paying Jobs
         </div>
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-          Top Career opportunities of the future
+          Future-Proof Your Career with In-Demand Skills
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Choose from one of the most sought-after, High-value & industry-focused skills that align with your Passion and interests. 
