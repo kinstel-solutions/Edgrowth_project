@@ -52,7 +52,7 @@ export function Navbar() {
           className="font-bold text-2xl tracking-tight text-primary flex items-center gap-2">
           {/* Logo */}
           <div className="flex items-center justify-center">
-            <span className="text-primary font-extrabold text-3xl">
+            <span className="text-primary font-extrabold text-2xl md:text-3xl">
               EDGROWTH
             </span>
           </div>
@@ -63,7 +63,16 @@ export function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/"
+                    className={navigationMenuTriggerStyle()}>
+                    Home
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Online Courses</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-popover rounded-md shadow-lg border">
                     {courses.map((component) => (
@@ -126,8 +135,12 @@ export function Navbar() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="flex items-center gap-4 lg:hidden">
-          <ThemeToggle />
+        <div className="flex items-center gap-3 lg:hidden">
+          <ButtonCTA
+            href="/contact"
+            size="sm">
+            Get Started
+          </ButtonCTA>
           <button
             className="lg:hidden"
             onClick={() => setIsOpen(!isOpen)}>
@@ -140,6 +153,12 @@ export function Navbar() {
       {isOpen && (
         <div className="lg:hidden p-4 bg-background border-t h-screen overflow-y-auto pb-20">
           <nav className="flex flex-col gap-6">
+            <Link
+              href="/"
+              className="font-semibold text-foreground"
+              onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
             <div>
               <span className="font-semibold text-sm text-muted-foreground uppercase tracking-wider block mb-2">
                 Courses
@@ -187,6 +206,12 @@ export function Navbar() {
             </Link>
 
             <div className="h-px bg-border my-2"></div>
+            
+            <div className="flex items-center justify-between py-2">
+              <span className="text-sm font-medium text-foreground">Switch Appearance</span>
+              <ThemeToggle />
+            </div>
+
             <div onClick={() => setIsOpen(false)}>
               <ButtonCTA
                 href="/contact"

@@ -10,15 +10,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "EdGrowth Consultants | Educational Counselling & Placement",
-  description: "EdGrowth Consultants LLP is a premier educational consultancy in Lucknow providing expert counselling for MBA, BBA, M.Com, B.Com, and professional placement services.",
+  description: "EdGrowth Consultants LLP is a premier educational consultancy in Lucknow providing expert counselling for students who want to pursue online MBA, BBA, M.Com, B.Com, and provides professional placement & financial services.",
   keywords: [
     "EdGrowth",
     "Educational Counselling",
-    "Career Guidance Lucknow",
-    "Online MBA",
-    "BBA Programs",
+    "Expert Career Counselling & Support",
+    "Best Online MBA",
+    "Best Online BBA Programs",
     "Career Placement Services",
-    "Higher Education India",
+    "Best Online M.Com & B.Com Courses",
     "Student Counselling",
     "University Admissions"
   ],

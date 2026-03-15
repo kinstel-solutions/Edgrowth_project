@@ -39,9 +39,9 @@ export default function CoursesPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4 text-foreground">Our Courses</h1>
+        <h1 className="text-4xl font-bold mb-4 text-foreground">Top Online Courses</h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Explore our range of online degree programs designed to accelerate your career.
+          Enhance your skills with Industry-recognized, UGC & WES approved online degree programs from top-tier universities.
         </p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

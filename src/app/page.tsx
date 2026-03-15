@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      <section className="relative py-8 pb-0 md:py-12 overflow-hidden bg-background">
+      <section className="relative py-4 pb-0 md:py-12 overflow-hidden bg-background">
         <div className="container mx-auto px-4 relative z-10 animate-fade-in-up">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
@@ -36,7 +36,7 @@ export default function Home() {
               </div> */}
                <div className="mb-8 sm:mb-10">
                 <FadeIn delay={300} direction="left">
-                <p className="text-md text-muted-foreground mb-3 font-medium">
+                <p className="text-sm text-muted-foreground mb-3 font-medium">
                   High-Paying Careers
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -44,9 +44,9 @@ export default function Home() {
                     "Financial Advisory",
                     "Investment Banking",
                     "Corporate Finance",
-                    "Digital Marketing",
+                   
                     "Artificial Intelligence",
-                    "Data Science",
+                    
                     "Business Analytics",
                     "Full Stack Development"
                   ].map((skill) => (
@@ -68,7 +68,8 @@ export default function Home() {
               </FadeIn>
               <FadeIn delay={150} direction="down">
               <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg">
-                We are an established EdTech firm with a focus on quality learning. Offers industry relevant undergraduate and postgraduate programs. Partnered with more than 10 top universities across pan India.
+                
+                Let us help you find the best online program based on your unique requirements and interests.
               </p>
              </FadeIn>
              <FadeIn delay={200} direction="right">
@@ -164,10 +165,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-                Our Courses
+                Top Online Courses 
               </h2>
               <p className="text-lg text-muted-foreground">
-                Enhance your skills with our top-tier online degree programs.
+                Enhance your skills with Industry-recognized, UGC & WES approved online degree programs from top-tier universities.
               </p>
             </div>
             <Link
@@ -473,7 +474,7 @@ export default function Home() {
             <FadeIn delay={200}>
               <div className="flex flex-col items-center">
                    <div className="h-16 w-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4"><Briefcase size={32}/></div>
-                   <h3 className="font-semibold px-2">Long Experience in Career Building & Placement</h3>
+                   <h3 className="font-semibold px-2">Extensive Expertise in Career Building & Placement</h3>
               </div>
             </FadeIn>
             <FadeIn delay={300}>

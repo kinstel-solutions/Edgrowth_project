@@ -27,14 +27,18 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <FadeIn direction="right">
                 <h2 className="text-3xl font-bold text-foreground mb-6">About the Company</h2>
+                <p className="text-xl text-foreground max-w-2xl mb-6">
+            We are an established EdTech firm with a focus on quality learning. Offers industry relevant undergraduate and postgraduate programs.
+            Partnered with more than 10 top universities across pan India.
+                </p>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <ul className="list-disc pl-5 space-y-2">
-                        <li>Established Edtech firm with a focus on quality learning.</li>
-                        <li>Offers industry relevant undergraduate and postgraduate programs.</li>
-                        <li>Student-centric approach with an experienced team of academic counselors.</li>
+                        <li>Student-centric approach.</li>
+                        <li>Highly experienced team of academic counselors.</li>
+                        <li>Multi-lingual expert support across all major Indian regional languages.</li>
                         <li>Commitment to academic excellence and career readiness.</li>
                         <li>Thousands of students guided toward successful careers.</li>
-                        <li>Partnered with more than 10 top universities across pan India.</li>
+                      
                     </ul>
                 </div>
                 <ButtonCTA
@@ -42,7 +46,7 @@ export default function AboutPage() {
                   className="mt-8"
                   showIcon
                 >
-                  Get In Touch
+                  Book a Free Consultation Today
                 </ButtonCTA>
             </FadeIn>
             <FadeIn direction="left" className="h-full">
@@ -83,7 +87,7 @@ export default function AboutPage() {
                   variant="outline"
                   showIcon
                 >
-                 Take the First Step To Success
+                 Take the First Step towards a Successful Career
                 </ButtonCTA>
                 </FadeIn>
             </div>
