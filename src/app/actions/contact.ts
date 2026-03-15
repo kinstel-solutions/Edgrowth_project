@@ -1,8 +1,10 @@
 "use server";
 
 import { Resend } from "resend";
+import { headers } from "next/headers";
 import { contactSchema, ContactFormData } from "@/lib/schemas/contact";
 import ContactEmail from "@/emails/ContactEmail";
+import { rateLimit } from "@/lib/rate-limit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,6 +16,18 @@ export async function sendContactEmail(data: ContactFormData) {
     return {
       success: false,
       error: "Invalid form data. Please check your inputs.",
+    };
+  }
+
+  // Rate Limiting
+  const headerList = await headers();
+  const ip = headerList.get("x-forwarded-for") || "anonymous";
+  const limitResult = await rateLimit(`contact_${ip}`, 5, 10 * 60 * 1000); // 5 requests per 10 minutes
+
+  if (!limitResult.success) {
+    return {
+      success: false,
+      error: "Too many requests. Please try again in 10 minutes.",
     };
   }
 
