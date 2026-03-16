@@ -128,18 +128,24 @@ export function Navbar() {
         <div className="hidden lg:flex gap-4 items-center">
           <ThemeToggle />
           <ButtonCTA
-            href="/contact"
-            size="navbar">
-            Get In Touch
+            href="tel:+918527511409"
+            size="navbar"
+            showIcon
+            iconType="phone"
+            className="animate-shake">
+            Call: +91 8527511409
           </ButtonCTA>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="flex items-center gap-3 lg:hidden">
           <ButtonCTA
-            href="/contact"
-            size="sm">
-            Get Started
+            href="tel:+918527511409"
+            size="sm"
+            showIcon
+            iconType="phone"
+            className="animate-shake">
+            Call Now
           </ButtonCTA>
           <button
             className="lg:hidden"
@@ -214,9 +220,12 @@ export function Navbar() {
 
             <div onClick={() => setIsOpen(false)}>
               <ButtonCTA
-                href="/contact"
-                size="full">
-                Get In Touch
+                href="tel:+918527511409"
+                size="full"
+                showIcon
+                iconType="phone"
+                className="animate-shake">
+                Call Us: +91 8527511409
               </ButtonCTA>
             </div>
           </nav>

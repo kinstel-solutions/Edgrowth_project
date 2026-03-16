@@ -241,7 +241,7 @@ export default function ContactClient() {
                     <Phone className="text-blue-400 h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Call Us Now</h3>
+                    <h3 className="font-semibold text-lg mb-1">Call Us</h3>
                     <p className="text-slate-300">
                       <a href="tel:8527511409" className="hover:text-white transition-colors text-lg font-medium">+91 8527511409</a>
                     </p>
@@ -255,7 +255,7 @@ export default function ContactClient() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
                     <p className="text-slate-300">
-                      <a href="mailto:info@edgrowth.com" className="hover:text-white transition-colors">info@edgrowth.com</a>
+                      <a href="mailto:shekhar@edgrowth.info" className="hover:text-white transition-colors">shekhar@edgrowth.info</a>
                     </p>
                   </div>
                 </div>

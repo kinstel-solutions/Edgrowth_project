@@ -116,7 +116,7 @@ export default function Home() {
               </FadeIn>
             </div>
             <FadeIn delay={60} direction="right">
-              <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl hidden md:block">
+              <div className="animate-soft-bounce relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl hidden md:block">
               <Image
                 src="/hero-v2.png"
                 alt="Professional education and career growth"

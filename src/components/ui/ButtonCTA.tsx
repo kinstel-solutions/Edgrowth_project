@@ -24,7 +24,7 @@ export function ButtonCTA({
   size = "md",
 }: ButtonCTAProps) {
   const Icon = iconType === "phone" ? Phone : ArrowRight;
-  const baseStyles = "inline-flex items-center justify-center rounded-md font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
+  const baseStyles = "group inline-flex items-center justify-center rounded-md font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
   
   const variants = {
     primary: "bg-primary  text-primary-foreground  hover:bg-primary/90 shadow shimmer",

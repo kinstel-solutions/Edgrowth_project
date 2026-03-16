@@ -66,7 +66,7 @@ export function Footer() {
               <a href="tel:8527511409">+91 8527511409</a>
             </li>
             <li className="text-primary hover:underline">
-              <a href="mailto:info@edgrowth.com">info@edgrowth.com</a>
+              <a href="mailto:shekhar@edgrowth.info">shekhar@edgrowth.info</a>
             </li>
           </ul>
         </div>
