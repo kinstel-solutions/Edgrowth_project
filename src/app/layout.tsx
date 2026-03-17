@@ -80,8 +80,8 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden relative`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <Navbar />
