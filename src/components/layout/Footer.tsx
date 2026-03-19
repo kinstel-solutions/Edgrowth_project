@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,10 +9,15 @@ export function Footer() {
         <div className="space-y-4">
           <Link
             href="/"
-            className="font-bold text-2xl tracking-tight text-primary flex items-center gap-2">
-            <span className="text-3xl font-extrabold text-primary">
-              EDGROWTH
-            </span>
+            className="flex items-center gap-2 group transition-all duration-300">
+            <div className="flex items-center gap-0.5 leading-none">
+              <span className="text-primary font-serif font-bold text-2xl tracking-tight">
+                Ed
+              </span>
+              <span className="bg-primary text-primary-foreground font-sans font-extrabold text-xl px-1 py-0.5 rounded-sm tracking-tighter">
+                Growth
+              </span>
+            </div>
           </Link>
           <p className="text-sm leading-relaxed">
             EdGrowth Consultants LLP is a premier educational consultancy providing online education counselling and financing services. We help you achieve your dream qualification.

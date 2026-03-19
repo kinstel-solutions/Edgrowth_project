@@ -41,6 +41,8 @@ const courses = [
 ];
 
 
+import Image from "next/image";
+
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -49,11 +51,24 @@ export function Navbar() {
       <div className="flex h-16 items-center px-4 container mx-auto justify-between">
         <Link
           href="/"
-          className="font-bold text-2xl tracking-tight text-primary flex items-center gap-2">
+          className="font-bold text-2xl tracking-tight text-primary flex items-center gap-2 group transition-all duration-300">
           {/* Logo */}
-          <div className="flex items-center justify-center">
-            <span className="text-primary font-extrabold text-2xl md:text-3xl">
-              EDGROWTH
+          {/* <div className="relative w-10 h-10 overflow-hidden rounded-full shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+            <Image
+              src="/logo.png"
+              alt="EdGrowth Logo"
+              width={40}
+              height={40}
+              className="object-cover"
+              priority
+            />
+          </div> */}
+          <div className="flex items-center gap-0.5 leading-none">
+            <span className="text-primary font-[dmSerif] font-extrabold text-2xl md:text-3xl tracking-tight">
+              Ed
+            </span>
+            <span className=" text-secondary-foreground/90 font-[dmSerif] font-extrabold text-2xl md:text-3xl  py-0.5 rounded-sm tracking-md">
+              Growth
             </span>
           </div>
         </Link>

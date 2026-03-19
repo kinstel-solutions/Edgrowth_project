@@ -25,6 +25,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
   
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-serif: var(--font-dm-serif), ui-serif, Georgia;
+  
   --animate-fade-in: fadeIn 0.8s ease-out forwards;
   --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
   --animate-zoom-pulse: zoom-pulse 2s ease-in-out infinite;

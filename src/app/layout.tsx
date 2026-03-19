@@ -1,12 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-dm-serif",
+});
 
 export const metadata: Metadata = {
   title: "EdGrowth Consultants | Educational Counselling & Placement",
@@ -77,7 +86,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth min-h-screen overflow-x-hidden" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden relative`}>
+      <body className={`${inter.variable} ${dmSerif.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden relative`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
