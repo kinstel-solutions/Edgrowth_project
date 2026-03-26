@@ -347,62 +347,62 @@ export default function Home() {
             {
               name: "Amity University",
               description: "A global hub for industry-focused education, recognized for academic excellence and innovation.",
-              image: "/universities/amity.png"
+              image: "/universities/amity-university-gwalior-campus-admission.webp"
             },
             {
               name: "DY Patil University, Pune",
               description: "Established excellence in Pune, offering quality value-based and cutting-edge education across diverse fields.",
-              image: "/universities/sharda.png"
+              image: "/universities/Dr.-D.-Y.-Patil-Vidyapeeth.jpg"
             },
             {
               name: "Jain University",
               description: "A hub for learning in Bangalore, recognized for its focus on entrepreneurship, research, and sports.",
-              image: "/universities/sharda.png"
+              image: "/universities/jain university.jpg"
             },
             {
               name: "Lovely Professional University",
               description: "One of India's largest multidisciplinary universities with a sprawling 600-acre residential campus.",
-              image: "/universities/lpu.png"
+              image: "/universities/lpu-jalandhar-360559.webp"
             },
             {
               name: "Manipal University Jaipur",
               description: "A NAAC A+ accredited university known for academic excellence and industry-focused learning in Jaipur.",
-              image: "/universities/manipal.png"
+              image: "/universities/MUJ-mobile-banner.png"
             },
             {
               name: "Noida International University",
               description: "An A+ NAAC accredited university in Greater Noida, offering world-class infrastructure and global education.",
-              image: "/universities/sharda.png"
+              image: "/universities/Noida-university.jpg"
             },
             {
               name: "Sharda University",
               description: "A globally recognized institution in Greater Noida, fostering an inclusive and multicultural learning environment.",
-              image: "/universities/sharda.png"
+              image: "/universities/shardaUniversity.jpg"
             },
             {
               name: "Shoolini University",
               description: "A research-focused university in the Himalayas, ranked among top global institutions for innovation.",
-              image: "/universities/shoolini.png"
+              image: "/universities/shooliniUniversity.jpg"
             },
             {
               name: "Sikkim Manipal University",
               description: "Pioneering quality education and healthcare in NE India, offering interdisciplinary programs.",
-              image: "/universities/shoolini.png"
+              image: "/universities/Manipal-University-banner.jpg"
             },
             {
               name: "Uttaranchal University",
               description: "A state-of-the-art institution in Dehradun, dedicated to research, innovation, and student-centric learning.",
-              image: "/universities/shoolini.png"
+              image: "/universities/uttaranchal university.png"
             },
             {
               name: "Vivekanand Global University",
               description: "A premier institution in Rajasthan focusing on holistic education, placements, and industry exposure.",
-              image: "/universities/manipal.png"
+              image: "/universities/vivekananda global university.jpg"
             },
             {
               name: "Narsee Monjee University",
               description: "A leading multi-disciplinary university with a legacy of excellence in management and professional studies.",
-              image: "/universities/nmims.png"
+              image: "/universities/narsee monjee university.jpg"
             }
           ]} 
         />

@@ -11,10 +11,10 @@ export function Footer() {
             href="/"
             className="flex items-center gap-2 group transition-all duration-300">
             <div className="flex items-center gap-0.5 leading-none">
-              <span className="text-primary font-serif font-bold text-2xl tracking-tight">
+              <span className="text-primary font-[dmSerif] font-extrabold text-2xl md:text-3xl tracking-tight">
                 Ed
               </span>
-              <span className="bg-primary text-primary-foreground font-sans font-extrabold text-xl px-1 py-0.5 rounded-sm tracking-tighter">
+              <span className=" text-secondary-foreground/90 font-[dmSerif] font-extrabold text-2xl md:text-3xl  py-0.5 rounded-sm tracking-md">
                 Growth
               </span>
             </div>
