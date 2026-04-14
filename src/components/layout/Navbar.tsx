@@ -20,26 +20,29 @@ import { ButtonCTA } from "@/components/ui/ButtonCTA";
 const courses = [
   {
     title: "MBA",
-    href: "/courses#mba",
-    description: "Master of Business Administration - Advance your career with top-tier management skills.",
+    href: "/lp/online-mba",
+    description:
+      "Master of Business Administration - Advance your career with top-tier management skills.",
   },
   {
     title: "BBA",
     href: "/courses#bba",
-    description: "Bachelor of Business Administration - Foundation for future business leaders.",
+    description:
+      "Bachelor of Business Administration - Foundation for future business leaders.",
   },
   {
     title: "MCOM",
     href: "/courses#mcom",
-    description: "Master of Commerce - Specialized knowledge in accounting and finance.",
+    description:
+      "Master of Commerce - Specialized knowledge in accounting and finance.",
   },
   {
     title: "BCOM",
     href: "/courses#bcom",
-    description: "Bachelor of Commerce - Comprehensive understanding of commerce and trade.",
+    description:
+      "Bachelor of Commerce - Comprehensive understanding of commerce and trade.",
   },
 ];
-
 
 import Image from "next/image";
 
@@ -165,7 +168,11 @@ export function Navbar() {
           <button
             className="lg:hidden"
             onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="text-foreground" /> : <Menu className="text-foreground" />}
+            {isOpen ? (
+              <X className="text-foreground" />
+            ) : (
+              <Menu className="text-foreground" />
+            )}
           </button>
         </div>
       </div>
@@ -227,9 +234,11 @@ export function Navbar() {
             </Link>
 
             <div className="h-px bg-border my-2"></div>
-            
+
             <div className="flex items-center justify-between py-2">
-              <span className="text-sm font-medium text-foreground">Switch Appearance</span>
+              <span className="text-sm font-medium text-foreground">
+                Switch Appearance
+              </span>
               <ThemeToggle />
             </div>
 

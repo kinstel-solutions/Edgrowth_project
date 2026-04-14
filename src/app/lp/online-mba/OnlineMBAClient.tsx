@@ -47,10 +47,9 @@ const lpFormSchema = z.object({
     ),
   email: z
     .string()
+    .min(1, "Email is required")
     .email("Invalid email address")
-    .max(255, "Email is too long")
-    .optional()
-    .or(z.literal("")),
+    .max(255, "Email is too long"),
   location: z.string().max(100, "Location is too long").optional(),
   interestedCourse: z.string().max(200, "Course name is too long").optional(),
 });
@@ -64,7 +63,7 @@ const universities = [
     name: "Amity University",
     duration: "2 Years",
     fee: "₹49,750",
-    emi: "7,500", // "Show EMI options"
+    emi: "", // "Show EMI options"
     accreditation: "UGC, NAAC A+",
     image: "/universities/amity-university-gwalior-campus-admission.webp",
   },
@@ -72,7 +71,7 @@ const universities = [
     name: "Manipal University Jaipur",
     duration: "2 Years",
     fee: "₹43,750",
-    emi: "7,500",
+    emi: "",
     accreditation: "UGC, NAAC A+",
     image: "/universities/MUJ-mobile-banner.png",
   },
@@ -80,7 +79,7 @@ const universities = [
     name: "Jain University",
     duration: "2 Years",
     fee: "₹49,000",
-    emi: "7,500",
+    emi: "",
     accreditation: "UGC, NAAC A+",
     image: "/universities/jain university.jpg",
   },
@@ -88,7 +87,7 @@ const universities = [
     name: "Lovely Professional University",
     duration: "2 Years",
     fee: "₹40,400",
-    emi: "7,500",
+    emi: "",
     accreditation: "UGC, NAAC A+",
     image: "/universities/lpu-jalandhar-360559.webp",
   },
@@ -96,7 +95,7 @@ const universities = [
     name: "Shoolini University",
     duration: "2 Years",
     fee: "₹32,500",
-    emi: "7,500",
+    emi: "",
     accreditation: "UGC, NAAC A+",
     image: "/universities/shooliniUniversity.jpg",
   },
@@ -104,7 +103,7 @@ const universities = [
     name: "Uttaranchal University",
     duration: "2 Years",
     fee: "₹24,500",
-    emi: "7,500",
+    emi: "",
     accreditation: "UGC, NAAC A+",
     image: "/universities/uttaranchal university.png",
   },
@@ -112,7 +111,7 @@ const universities = [
     name: "DY Patil Vidyapeeth Pune",
     duration: "2 Years",
     fee: "₹50,000",
-    emi: "7,500",
+    emi: "",
     accreditation: "UGC, NAAC A+",
     image: "/universities/Dr.-D.-Y.-Patil-Vidyapeeth.jpg",
   },
@@ -120,7 +119,7 @@ const universities = [
     name: "Narsee Monjee University",
     duration: "2 Years",
     fee: "₹52,500",
-    emi: "7,500",
+    emi: "",
     accreditation: "UGC, NAAC A++",
     image: "/universities/narsee monjee university.jpg",
   },
@@ -270,7 +269,7 @@ function HeroSection() {
             <FadeIn direction="left">
               <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-md font-medium text-primary mb-6">
                 <GraduationCap className="h-4 w-4 mr-2" />
-                Premium MBA Degrees made affordable
+                Prestigious MBA Degrees, Now Online
               </div>
             </FadeIn>
 
@@ -285,7 +284,7 @@ function HeroSection() {
                 <span className="md:block">
                   programs starting at{" "}
                   <span className="text-primary shimmer font-extrabold">
-                    ₹7,500/month
+                    ₹4,500/month
                   </span>
                 </span>
               </h1>
@@ -299,6 +298,25 @@ function HeroSection() {
                 will help you find the right, globally-recognized MBA program
                 based on your unique requirements, budget and career goals.
               </p>
+            </FadeIn>
+
+            <FadeIn
+              delay={250}
+              direction="left">
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <a
+                  href="#lead-form"
+                  className="inline-flex h-12 items-center justify-center rounded-lg bg-primary text-primary-foreground px-8 text-md font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all shimmer">
+                  Get Free Counselling
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+                <a
+                  href="tel:+918527511409"
+                  className="inline-flex h-12 items-center justify-center rounded-lg border border-primary/20 bg-background text-foreground px-8 text-md font-bold hover:bg-primary/5 transition-all">
+                  <Phone className="mr-2 h-4 w-4 text-primary" />
+                  Talk to an Expert Now
+                </a>
+              </div>
             </FadeIn>
 
             <FadeIn
@@ -389,18 +407,18 @@ function LeadCaptureForm() {
     try {
       const result = await sendContactEmail({
         name: data.name || "Anonymous",
-        email: data.email || "no-email@provided.com",
+        email: data.email,
         phone: data.phone,
         location: data.location || "Not specified",
         programs: "Online MBA",
-        otherInfo: `[Lead from: Online MBA Landing Page]
-Interested In: ${data.interestedCourse || "Not specified"}`.trim(),
+        otherInfo: `[Lead from: Online MBA Landing Page]`.trim(),
       });
 
       if (result.success) {
         setSubmitStatus({
           type: "success",
-          message: "Thank you! Our MBA expert will call you within 30 minutes.",
+          message:
+            "Thank you for your enquiry! Sit tight, our MBA expert will call you as soon as possible.",
         });
         reset();
       } else {
@@ -443,11 +461,13 @@ Interested In: ${data.interestedCourse || "Not specified"}`.trim(),
   return (
     <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-xl">
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-foreground mb-1">
+        <h2 className="text-xl font-bold text-foreground mb-3">
           Get Free Expert Counselling
         </h2>
         <p className="text-sm text-muted-foreground">
           Shortlist your top 3 MBA programs in a free 10-minute call.
+          <br /> Also, Get <b>best EMI Offers</b>, scholarship details,{" "}
+          <b>Brochure</b> & more.
         </p>
       </div>
 
@@ -493,10 +513,7 @@ Interested In: ${data.interestedCourse || "Not specified"}`.trim(),
             <label
               htmlFor="lp-email"
               className="text-sm font-medium text-foreground flex justify-between">
-              Email{" "}
-              <span className="text-muted-foreground font-normal text-xs">
-                (Optional)
-              </span>
+              Email <span className="text-destructive">*</span>
             </label>
             <input
               {...register("email")}
@@ -568,7 +585,7 @@ Interested In: ${data.interestedCourse || "Not specified"}`.trim(),
               type="text"
               id="lp-course"
               className="w-full h-11 px-4 rounded-md border border-input bg-background text-foreground transition-all focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm"
-              placeholder="Type your interested University/Course to get brochure"
+              placeholder="Fill this field to get brochure"
             />
           </div>
         </div>
@@ -607,7 +624,7 @@ function TrustBadges() {
         <FadeIn>
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-center">
             {[
-              { value: "500+", label: "Happy Students" },
+              { value: "1000+", label: "Happy Students" },
               { value: "15+", label: "Partner Universities" },
               { value: "upto 95%", label: "Placement Assistance" },
               { value: "100%", label: "Free- Expert Counselling" },
@@ -634,7 +651,9 @@ function TrustBadges() {
 
 function UniversityComparison() {
   return (
-    <section className="py-16 bg-background">
+    <section
+      id="universities"
+      className="py-16 bg-background scroll-mt-20">
       <div className="container mx-auto px-4">
         <FadeIn>
           <div className="text-center mb-12">
@@ -643,7 +662,7 @@ function UniversityComparison() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We&apos;ve got you covered! Our experts has researched over
-              <b> hundreds of online MBA courses</b> and shortlisted top 10-15,
+              <b> hundreds of online MBA courses</b> and shortlisted top 15,
               best mba programs in 2026, based on industry recognition, students
               reviews, fees, & more!
             </p>
@@ -711,7 +730,7 @@ function UniversityComparison() {
                     <a
                       href="#lead-form"
                       className="flex h-10 items-center justify-center rounded-md bg-primary text-primary-foreground text-md font-bold transition-all hover:bg-primary/90 w-full">
-                      EMI starting at ₹{uni.emi}
+                      Show Best EMI Offers{uni.emi}
                     </a>
                     <a
                       href="#lead-form"
@@ -1045,7 +1064,7 @@ function FinalCTA() {
             Ready to Start Your MBA Journey?
           </h2>
           <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Join 3000+ students who found their perfect online MBA through
+            Join 1000+ students who found their perfect online MBA through
             EdGrowth. Free counselling. Zero spam. 100% privacy guaranteed.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
