@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -93,11 +92,9 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="flex-1 pt-16">
+          <ConditionalLayout>
             {children}
-          </main>
-          <Footer />
+          </ConditionalLayout>
           <FloatingWhatsApp />
         </ThemeProvider>
       </body>
