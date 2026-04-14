@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { ArrowRight, Phone, LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +14,7 @@ interface ButtonCTAProps {
   iconType?: "arrow" | "phone";
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg" | "navbar" | "full";
+  placement?: string;
 }
 
 export function ButtonCTA({
@@ -22,7 +25,9 @@ export function ButtonCTA({
   iconType = "arrow",
   variant = "primary",
   size = "md",
+  placement = "generic_button",
 }: ButtonCTAProps) {
+  const pathname = usePathname();
   const Icon = iconType === "phone" ? Phone : ArrowRight;
   const baseStyles = "group inline-flex items-center justify-center rounded-md font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
   
@@ -41,9 +46,20 @@ export function ButtonCTA({
     full: "w-full py-3 text-sm",
   };
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href.startsWith("tel:")) {
+      if (pathname?.startsWith("/lp/")) {
+        sendGTMEvent({ event: "lp_call_click", placement, method: "tel_link" });
+      } else {
+        sendGTMEvent({ event: "main_call_click", placement, method: "tel_link" });
+      }
+    }
+  };
+
   return (
     <Link
       href={href}
+      onClick={handleClick}
       className={cn(
         baseStyles,
         variants[variant],

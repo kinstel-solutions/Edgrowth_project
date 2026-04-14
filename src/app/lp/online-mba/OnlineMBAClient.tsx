@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { sendGTMEvent } from "@next/third-parties/google";
 import {
   CheckCircle2,
   GraduationCap,
@@ -312,6 +313,7 @@ function HeroSection() {
                 </a>
                 <a
                   href="tel:+918527511409"
+                  onClick={() => sendGTMEvent({ event: "lp_call_click", placement: "hero_call", method: "tel_link" })}
                   className="inline-flex h-12 items-center justify-center rounded-lg border border-primary/20 bg-background text-foreground px-8 text-md font-bold hover:bg-primary/5 transition-all">
                   <Phone className="mr-2 h-4 w-4 text-primary" />
                   Talk to an Expert Now
@@ -415,6 +417,20 @@ function LeadCaptureForm() {
       });
 
       if (result.success) {
+        const nameParts = data.name?.trim().split(" ") || [];
+        const first_name = nameParts[0] || "";
+        const last_name = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
+
+        sendGTMEvent({ 
+          event: "lp_generate_lead", 
+          placement: "hero_form", 
+          method: "form_submit",
+          email: data.email,
+          phone_number: data.phone,
+          first_name,
+          last_name,
+          city: data.location || ""
+        });
         setSubmitStatus({
           type: "success",
           message:
@@ -900,6 +916,7 @@ function MidPageCTA() {
           </a>
           <a
             href="tel:+918527511409"
+            onClick={() => sendGTMEvent({ event: "lp_call_click", placement: "mid_page_cta_call", method: "tel_link" })}
             className="inline-flex h-12 items-center justify-center rounded-md border border-primary-foreground/30 px-8 text-sm font-bold text-primary-foreground hover:bg-primary-foreground/10 transition-all">
             <Phone className="mr-2 h-4 w-4" />
             Call: +91 8527511409
@@ -1076,6 +1093,7 @@ function FinalCTA() {
             </a>
             <a
               href="tel:+918527511409"
+              onClick={() => sendGTMEvent({ event: "lp_call_click", placement: "final_cta_call", method: "tel_link" })}
               className="inline-flex h-12 items-center justify-center rounded-md border border-primary-foreground/30 text-primary-foreground px-8 text-sm font-bold hover:bg-primary-foreground/10 transition-all">
               <Phone className="mr-2 h-4 w-4" />
               Call Now
@@ -1101,6 +1119,7 @@ function StickyMobileCTA() {
         </a>
         <a
           href="tel:+918527511409"
+          onClick={() => sendGTMEvent({ event: "lp_call_click", placement: "sticky_mobile_call", method: "tel_link" })}
           className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-primary text-primary">
           <Phone className="h-5 w-5" />
         </a>

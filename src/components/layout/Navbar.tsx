@@ -150,6 +150,7 @@ export function Navbar() {
             size="navbar"
             showIcon
             iconType="phone"
+            placement="navbar_desktop_call"
             className="animate-shake">
             Call: +91 8527511409
           </ButtonCTA>
@@ -162,6 +163,7 @@ export function Navbar() {
             size="sm"
             showIcon
             iconType="phone"
+            placement="navbar_mobile_header_call"
             className="animate-shake">
             Call Now
           </ButtonCTA>
@@ -248,6 +250,7 @@ export function Navbar() {
                 size="full"
                 showIcon
                 iconType="phone"
+                placement="navbar_mobile_menu_call"
                 className="animate-shake">
                 Call Us: +91 8527511409
               </ButtonCTA>

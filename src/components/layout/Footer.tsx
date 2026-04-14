@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export function Footer() {
   return (
@@ -68,7 +71,12 @@ export function Footer() {
             <li>62, Guru Gobind Singh Marg</li>
             <li>Lucknow, Uttar Pradesh 226001</li>
             <li className="pt-2 text-primary hover:underline">
-              <a href="tel:8527511409">+91 8527511409</a>
+              <a 
+                href="tel:8527511409"
+                onClick={() => sendGTMEvent({ event: "main_call_click", placement: "footer", method: "tel_link" })}
+              >
+                +91 8527511409
+              </a>
             </li>
             <li className="text-primary hover:underline">
               <a href="mailto:shekhar@edgrowth.info">shekhar@edgrowth.info</a>

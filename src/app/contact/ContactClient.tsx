@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
 import { sendContactEmail } from "@/app/actions/contact";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function ContactClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,6 +35,20 @@ export default function ContactClient() {
     try {
       const result = await sendContactEmail(data);
       if (result.success) {
+        const nameParts = data.name?.trim().split(" ") || [];
+        const first_name = nameParts[0] || "";
+        const last_name = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
+
+        sendGTMEvent({ 
+          event: "main_generate_lead", 
+          placement: "contact_page_form", 
+          method: "form_submit",
+          email: data.email,
+          phone_number: data.phone,
+          first_name,
+          last_name,
+          city: data.location || ""
+        });
         setSubmitStatus({ 
           type: "success", 
           message: result.message || "Thank you! Your request has been received." 
@@ -243,7 +258,13 @@ export default function ContactClient() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Call Us</h3>
                     <p className="text-slate-300">
-                      <a href="tel:8527511409" className="hover:text-white transition-colors text-lg font-medium">+91 8527511409</a>
+                      <a 
+                        href="tel:8527511409" 
+                        onClick={() => sendGTMEvent({ event: "main_call_click", placement: "contact_page_info_panel", method: "tel_link" })}
+                        className="hover:text-white transition-colors text-lg font-medium"
+                      >
+                        +91 8527511409
+                      </a>
                     </p>
                   </div>
                 </div>
