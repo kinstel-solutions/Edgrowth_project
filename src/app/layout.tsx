@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -86,6 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth min-h-screen overflow-x-hidden" suppressHydrationWarning>
       <body className={`${inter.variable} ${dmSerif.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden relative`}>
+        <GoogleTagManager gtmId="GTM-T3VHHVLD" />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
