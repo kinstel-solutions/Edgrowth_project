@@ -9,12 +9,14 @@ import { GoogleTagManager } from '@next/third-parties/google';
 const inter = Inter({ 
   subsets: ["latin"],
   variable: "--font-inter",
+  display: 'swap',
 });
 
 const dmSerif = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-dm-serif",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {

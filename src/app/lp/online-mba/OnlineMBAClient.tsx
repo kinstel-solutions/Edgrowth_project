@@ -26,7 +26,7 @@ import {
   Globe,
   Handshake,
 } from "lucide-react";
-import { FadeIn } from "@/components/ui/FadeIn";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
@@ -267,19 +267,15 @@ function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left — Headline & Value Props */}
           <div>
-            <FadeIn direction="left">
-              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-md font-medium text-primary mb-6">
-                <GraduationCap className="h-4 w-4 mr-2" />
-                Prestigious MBA Degrees, Now Online
-              </div>
-            </FadeIn>
+            <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-md font-medium text-primary mb-6 animate-fade-in-down">
+              <GraduationCap className="h-4 w-4 mr-2" />
+              Prestigious MBA Degrees, Now Online
+            </div>
 
-            <FadeIn
-              delay={100}
-              direction="left">
-              <h1 className="text-4xl  sm:text-5xl lg:text-5xl font-bold tracking-tight mb-6 text-foreground leading-tight text-balance">
+            <div className="animate-fade-in-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tight mb-6 text-foreground leading-tight text-balance">
                 Top{" "}
-                <span className="text-primary  tracking-normal font-extrabold shimmer  ">
+                <span className="text-primary tracking-normal font-extrabold shimmer">
                   Online MBA
                 </span>{" "}
                 <span className="md:block">
@@ -289,100 +285,84 @@ function HeroSection() {
                   </span>
                 </span>
               </h1>
-            </FadeIn>
+            </div>
 
-            <FadeIn
-              delay={200}
-              direction="left">
+            <div className="animate-fade-in-right delay-150">
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg">
                 Our team of highly experienced academic and career counsellors
                 will help you find the right, globally-recognized MBA program
                 based on your unique requirements, budget and career goals.
               </p>
-            </FadeIn>
+            </div>
 
-            <FadeIn
-              delay={250}
-              direction="left">
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <a
-                  href="#lead-form"
-                  className="inline-flex h-12 items-center justify-center rounded-lg bg-primary text-primary-foreground px-8 text-md font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all shimmer">
-                  Get Free Counselling
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-                <a
-                  href="tel:+918527511409"
-                  onClick={() =>
-                    sendGTMEvent({
-                      event: "lp_call_click",
-                      placement: "hero_call",
-                      method: "tel_link",
-                    })
-                  }
-                  className="inline-flex h-12 items-center justify-center rounded-lg border border-primary/20 bg-background text-foreground px-8 text-md font-bold hover:bg-primary/5 transition-all">
-                  <Phone className="mr-2 h-4 w-4 text-primary" />
-                  Talk to an Expert Now
-                </a>
-              </div>
-            </FadeIn>
+            <div className="animate-fade-in-up delay-250 flex flex-col sm:flex-row gap-4 mb-10">
+              <a
+                href="#lead-form"
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-primary text-primary-foreground px-8 text-md font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all shimmer">
+                Get Free Counselling
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+              <a
+                href="tel:+918527511409"
+                onClick={() =>
+                  sendGTMEvent({
+                    event: "lp_call_click",
+                    placement: "hero_call",
+                    method: "tel_link",
+                  })
+                }
+                className="inline-flex h-12 items-center justify-center rounded-lg border border-primary/20 bg-background text-foreground px-8 text-md font-bold hover:bg-primary/5 transition-all">
+                <Phone className="mr-2 h-4 w-4 text-primary" />
+                Talk to an Expert Now
+              </a>
+            </div>
 
-            <FadeIn
-              delay={300}
-              direction="up">
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {[
-                  { icon: Shield, text: "UGC Approved" },
-                  { icon: Award, text: "NAAC Accredited" },
-                  { icon: CheckCircle2, text: "100% Verified" },
-                  { icon: Globe, text: "Globally Recognized" },
-                ].map((item) => (
-                  <div
-                    key={item.text}
-                    className="flex items-center font-bold gap-2 text-sm text-muted-foreground">
-                    <item.icon className="h-4 w-4 text-primary shrink-0" />
-                    <span>{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
+            <div className="animate-fade-in-up delay-300 grid grid-cols-2 gap-4 mb-8">
+              {[
+                { icon: Shield, text: "UGC Approved" },
+                { icon: Award, text: "NAAC Accredited" },
+                { icon: CheckCircle2, text: "100% Verified" },
+                { icon: Globe, text: "Globally Recognized" },
+              ].map((item) => (
+                <div
+                  key={item.text}
+                  className="flex items-center font-bold gap-2 text-sm text-muted-foreground">
+                  <item.icon className="h-4 w-4 text-primary shrink-0" />
+                  <span>{item.text}</span>
+                </div>
+              ))}
+            </div>
 
             {/* Accreditation Logos */}
-            <FadeIn
-              delay={400}
-              direction="up">
-              <div className="flex flex-wrap items-center gap-3">
-                {[
-                  { src: "/accredation-images/ugc.png", alt: "UGC" },
-                  { src: "/accredation-images/naac.png", alt: "NAAC" },
-                  { src: "/accredation-images/wes.jpg", alt: "WES" },
-                  { src: "/accredation-images/AICTE-Logo.webp", alt: "AICTE" },
-                ].map((badge) => (
-                  <div
-                    key={badge.alt}
-                    className="relative h-18 w-20 sm:h-14 sm:w-20 bg-white rounded-lg border border-border/50 p-1.5 flex items-center justify-center shadow-sm">
-                    <Image
-                      src={badge.src}
-                      alt={badge.alt}
-                      fill
-                      className="object-contain p-1"
-                    />
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
+            <div className="animate-fade-in-up delay-400 flex flex-wrap items-center gap-3">
+              {[
+                { src: "/accredation-images/ugc.png", alt: "UGC" },
+                { src: "/accredation-images/naac.png", alt: "NAAC" },
+                { src: "/accredation-images/wes.jpg", alt: "WES" },
+                { src: "/accredation-images/AICTE-Logo.webp", alt: "AICTE" },
+              ].map((badge) => (
+                <div
+                  key={badge.alt}
+                  className="relative h-18 w-20 sm:h-14 sm:w-20 bg-white rounded-lg border border-border/50 p-1.5 flex items-center justify-center shadow-sm">
+                  <Image
+                    src={badge.src}
+                    alt={badge.alt}
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 80px, 80px"
+                    className="object-contain p-1"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Right — Lead Form */}
-          <FadeIn
-            delay={150}
-            direction="right">
-            <div
-              id="lead-form"
-              className="scroll-mt-20">
-              <LeadCaptureForm />
-            </div>
-          </FadeIn>
+          <div
+            className="animate-fade-in-right delay-150 scroll-mt-20"
+            id="lead-form">
+            <LeadCaptureForm />
+          </div>
         </div>
       </div>
     </section>
@@ -644,27 +624,25 @@ function TrustBadges() {
   return (
     <section className="bg-muted/30 py-8">
       <div className="container mx-auto px-4">
-        <FadeIn>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-center">
-            {[
-              { value: "1000+", label: "Happy Students" },
-              { value: "15+", label: "Partner Universities" },
-              { value: "upto 95%", label: "Placement Assistance" },
-              { value: "100%", label: "Free- Expert Counselling" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="px-4">
-                <div className="text-2xl md:text-3xl font-bold text-primary">
-                  {stat.value}
-                </div>
-                <div className="text-xs md:text-sm text-muted-foreground mt-1">
-                  {stat.label}
-                </div>
+        <div className="animate-fade-in flex flex-wrap items-center justify-center gap-6 md:gap-12 text-center">
+          {[
+            { value: "1000+", label: "Happy Students" },
+            { value: "15+", label: "Partner Universities" },
+            { value: "upto 95%", label: "Placement Assistance" },
+            { value: "100%", label: "Free- Expert Counselling" },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="px-4">
+              <div className="text-2xl md:text-3xl font-bold text-primary">
+                {stat.value}
               </div>
-            ))}
-          </div>
-        </FadeIn>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -678,27 +656,32 @@ function UniversityComparison() {
       id="universities"
       className="py-16 bg-background scroll-mt-20">
       <div className="container mx-auto px-4">
-        <FadeIn>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-              Confused about which online mba to pursue?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We&apos;ve got you covered! Our experts has researched over
-              <b> hundreds of online MBA courses</b> and shortlisted top 15,
-              best mba programs in 2026, based on industry recognition, students
-              reviews, fees, & more!
-            </p>
-          </div>
-        </FadeIn>
+        <div className="animate-fade-in text-center mb-12">
+          <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+            Confused about which online mba to pursue?
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            We&apos;ve got you covered! Our experts has researched over
+            <b> hundreds of online MBA courses</b> and shortlisted top 15, best
+            mba programs in 2026, based on industry recognition, students
+            reviews, fees, & more!
+          </p>
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {universities.map((uni, idx) => (
-            <FadeIn
+            <div
               key={uni.name}
-              delay={idx * 80}
-              direction="up"
-              className="h-full">
+              className={cn(
+                "animate-fade-in-up h-full",
+                idx === 0
+                  ? "delay-100"
+                  : idx === 1
+                    ? "delay-200"
+                    : idx === 2
+                      ? "delay-300"
+                      : "delay-400",
+              )}>
               <div className="group bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
                 {/* University Image */}
                 <div className="relative h-36 w-full overflow-hidden bg-muted">
@@ -706,6 +689,7 @@ function UniversityComparison() {
                     src={uni.image}
                     alt={uni.name}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -743,10 +727,6 @@ function UniversityComparison() {
                       <CheckCircle2 className="h-3.5 w-3.5" />
                       100% Placement Support
                     </div>
-                    {/* <div className="flex items-center gap-1.5 text-xs text-green-600 dark:text-green-400">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      EMI Option Available
-                    </div> */}
                   </div>
 
                   <div className="mt-4 space-y-2">
@@ -763,20 +743,18 @@ function UniversityComparison() {
                   </div>
                 </div>
               </div>
-            </FadeIn>
+            </div>
           ))}
         </div>
 
-        <FadeIn delay={200}>
-          <div className="mt-10 text-center">
-            <a
-              href="#lead-form"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-bold text-primary-foreground shadow transition-all hover:bg-primary/90 shimmer">
-              More Online MBA Programs
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </div>
-        </FadeIn>
+        <div className="animate-fade-in delay-200 mt-10 text-center">
+          <a
+            href="#lead-form"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-bold text-primary-foreground shadow transition-all hover:bg-primary/90 shimmer">
+            More Online MBA Programs
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -821,23 +799,29 @@ function WhyEdGrowth() {
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
-        <FadeIn>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-              Why Students Choose EdGrowth
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Trusted by 3000+ students across India for unbiased MBA guidance.
-            </p>
-          </div>
-        </FadeIn>
+        <div className="animate-fade-in text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+            Why Students Choose EdGrowth
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Trusted by 3000+ students across India for unbiased MBA guidance.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {reasons.map((reason, idx) => (
-            <FadeIn
+            <div
               key={reason.title}
-              delay={idx * 120}
-              direction="up">
+              className={cn(
+                "animate-fade-in-up h-full",
+                idx === 0
+                  ? "delay-100"
+                  : idx === 1
+                    ? "delay-200"
+                    : idx === 2
+                      ? "delay-300"
+                      : "delay-400",
+              )}>
               <div className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full">
                 <div
                   className={cn(
@@ -853,7 +837,7 @@ function WhyEdGrowth() {
                   {reason.description}
                 </p>
               </div>
-            </FadeIn>
+            </div>
           ))}
         </div>
       </div>
@@ -867,24 +851,24 @@ function ComparisonFactors() {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <FadeIn>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-              Compare Across 8 Key Factors
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Make an informed decision by comparing universities on the metrics
-              that matter most.
-            </p>
-          </div>
-        </FadeIn>
+        <div className="animate-fade-in text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+            Compare Across 8 Key Factors
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Make an informed decision by comparing universities on the metrics
+            that matter most.
+          </p>
+        </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto">
           {comparisonFactors.map((factor, idx) => (
-            <FadeIn
+            <div
               key={factor.label}
-              delay={idx * 60}
-              direction="up">
+              className={cn(
+                "animate-fade-in-up",
+                `delay-${(idx % 4) * 100 + 100}`,
+              )}>
               <div className="flex flex-col items-center gap-3 p-5 bg-card border border-border rounded-xl shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 text-center group">
                 <div className="h-12 w-12 rounded-full bg-muted/50 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <factor.icon className={cn("h-6 w-6", factor.color)} />
@@ -893,7 +877,7 @@ function ComparisonFactors() {
                   {factor.label}
                 </span>
               </div>
-            </FadeIn>
+            </div>
           ))}
         </div>
       </div>
@@ -906,7 +890,7 @@ function ComparisonFactors() {
 function MidPageCTA() {
   return (
     <section className="bg-foreground text-primary-foreground py-16 mx-4 rounded-3xl px-8 md:px-16 text-center">
-      <FadeIn>
+      <div className="animate-fade-in">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
           Still Confused? Let Us Find the Perfect MBA for You.
         </h2>
@@ -935,7 +919,7 @@ function MidPageCTA() {
             Call: +91 8527511409
           </a>
         </div>
-      </FadeIn>
+      </div>
     </section>
   );
 }
@@ -946,24 +930,24 @@ function Testimonials() {
   return (
     <section className="py-16 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-4">
-        <FadeIn>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-              How online MBA has helped transform careers
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Trusted by 1000+ students | Partnered with Top 10+ UGC-Approved
-              Universities
-            </p>
-          </div>
-        </FadeIn>
+        <div className="animate-fade-in text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+            How online MBA has helped transform careers
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Trusted by 1000+ students | Partnered with Top 10+ UGC-Approved
+            Universities
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {testimonials.slice(0, 3).map((t, idx) => (
-            <FadeIn
+            <div
               key={t.name}
-              delay={idx * 100}
-              direction="up">
+              className={cn(
+                "animate-fade-in-up h-full",
+                idx === 0 ? "delay-100" : idx === 1 ? "delay-200" : "delay-300",
+              )}>
               <div className="bg-card border border-border rounded-xl p-6 shadow-sm h-full flex flex-col">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -983,17 +967,23 @@ function Testimonials() {
                   <p className="text-xs text-primary">{t.program}</p>
                 </div>
               </div>
-            </FadeIn>
+            </div>
           ))}
         </div>
 
         {/* Extra testimonials — compact */}
         <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto mt-6">
           {testimonials.slice(3).map((t, idx) => (
-            <FadeIn
+            <div
               key={t.name}
-              delay={(idx + 3) * 100}
-              direction="up">
+              className={cn(
+                "animate-fade-in-up",
+                idx + 3 === 3
+                  ? "delay-300"
+                  : idx + 3 === 4
+                    ? "delay-400"
+                    : "delay-500",
+              )}>
               <div className="bg-card border border-border rounded-lg p-4 flex items-start gap-3">
                 <div className="shrink-0 mt-0.5">
                   <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
@@ -1010,7 +1000,7 @@ function Testimonials() {
                   </p>
                 </div>
               </div>
-            </FadeIn>
+            </div>
           ))}
         </div>
       </div>
@@ -1026,23 +1016,20 @@ function FAQSection() {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
-        <FadeIn>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Everything you need to know about EdGrowth and Online MBAs
-            </p>
-          </div>
-        </FadeIn>
+        <div className="animate-fade-in text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Everything you need to know about EdGrowth and Online MBAs
+          </p>
+        </div>
 
         <div className="space-y-3">
           {faqs.map((faq, idx) => (
-            <FadeIn
+            <div
               key={idx}
-              delay={idx * 60}
-              direction="up">
+              className={cn("animate-fade-in-up", `delay-${(idx % 5) * 100}`)}>
               <div className="border border-border rounded-xl overflow-hidden bg-card">
                 <button
                   id={`faq-trigger-${idx}`}
@@ -1075,7 +1062,7 @@ function FAQSection() {
                   </p>
                 </div>
               </div>
-            </FadeIn>
+            </div>
           ))}
         </div>
       </div>
@@ -1088,38 +1075,36 @@ function FAQSection() {
 function FinalCTA() {
   return (
     <section className="container mx-auto px-4 py-16">
-      <FadeIn>
-        <div className="bg-primary rounded-3xl px-8 md:px-16 py-16 text-center text-primary-foreground">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            Ready to Start Your MBA Journey?
-          </h2>
-          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Join 1000+ students who found their perfect online MBA through
-            EdGrowth. Free counselling. Zero spam. 100% privacy guaranteed.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="#lead-form"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-background text-primary px-8 text-sm font-bold shadow transition-all hover:bg-accent">
-              Get Free Counselling
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-            <a
-              href="tel:+918527511409"
-              onClick={() =>
-                sendGTMEvent({
-                  event: "lp_call_click",
-                  placement: "final_cta_call",
-                  method: "tel_link",
-                })
-              }
-              className="inline-flex h-12 items-center justify-center rounded-md border border-primary-foreground/30 text-primary-foreground px-8 text-sm font-bold hover:bg-primary-foreground/10 transition-all">
-              <Phone className="mr-2 h-4 w-4" />
-              Call Now
-            </a>
-          </div>
+      <div className="animate-fade-in bg-primary rounded-3xl px-8 md:px-16 py-16 text-center text-primary-foreground">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+          Ready to Start Your MBA Journey?
+        </h2>
+        <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+          Join 1000+ students who found their perfect online MBA through
+          EdGrowth. Free counselling. Zero spam. 100% privacy guaranteed.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#lead-form"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-background text-primary px-8 text-sm font-bold shadow transition-all hover:bg-accent">
+            Get Free Counselling
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </a>
+          <a
+            href="tel:+918527511409"
+            onClick={() =>
+              sendGTMEvent({
+                event: "lp_call_click",
+                placement: "final_cta_call",
+                method: "tel_link",
+              })
+            }
+            className="inline-flex h-12 items-center justify-center rounded-md border border-primary-foreground/30 text-primary-foreground px-8 text-sm font-bold hover:bg-primary-foreground/10 transition-all">
+            <Phone className="mr-2 h-4 w-4" />
+            Call Now
+          </a>
         </div>
-      </FadeIn>
+      </div>
     </section>
   );
 }

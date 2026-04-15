@@ -10,7 +10,12 @@ interface FadeInProps {
   direction?: "up" | "down" | "left" | "right" | "none";
 }
 
-export function FadeIn({ children, delay = 0, className, direction = "up" }: FadeInProps) {
+export function FadeIn({
+  children,
+  delay = 0,
+  className,
+  direction = "up",
+}: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -22,7 +27,7 @@ export function FadeIn({ children, delay = 0, className, direction = "up" }: Fad
           if (ref.current) observer.unobserve(ref.current);
         }
       },
-      { threshold: 0.1, rootMargin: "50px" }
+      { threshold: 0.1, rootMargin: "50px" },
     );
 
     if (ref.current) {
@@ -54,12 +59,11 @@ export function FadeIn({ children, delay = 0, className, direction = "up" }: Fad
     <div
       ref={ref}
       className={cn(
-        "transition-all duration-700 ease-out",
+        "transition-all duration-400 ease-out",
         getDirectionClasses(),
-        className
+        className,
       )}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
+      style={{ transitionDelay: `${delay}ms` }}>
       {children}
     </div>
   );
