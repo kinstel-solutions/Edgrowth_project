@@ -63,7 +63,7 @@ const universities = [
   {
     name: "Amity University",
     duration: "2 Years",
-    fee: "₹49,750",
+    fee: "₹56,300",
     emi: "", // "Show EMI options"
     accreditation: "UGC, NAAC A+",
     image: "/universities/amity-university-gwalior-campus-admission.webp",
@@ -71,7 +71,7 @@ const universities = [
   {
     name: "Manipal University Jaipur",
     duration: "2 Years",
-    fee: "₹43,750",
+    fee: "₹45,000",
     emi: "",
     accreditation: "UGC, NAAC A+",
     image: "/universities/MUJ-mobile-banner.png",
@@ -79,7 +79,7 @@ const universities = [
   {
     name: "Jain University",
     duration: "2 Years",
-    fee: "₹49,000",
+    fee: "₹40,000",
     emi: "",
     accreditation: "UGC, NAAC A+",
     image: "/universities/jain university.jpg",
@@ -119,7 +119,7 @@ const universities = [
   {
     name: "Narsee Monjee University",
     duration: "2 Years",
-    fee: "₹52,500",
+    fee: "₹55,000",
     emi: "",
     accreditation: "UGC, NAAC A++",
     image: "/universities/narsee monjee university.jpg",
@@ -170,15 +170,15 @@ const faqs = [
   },
   {
     q: "Do I have to pay EdGrowth for its services?",
-    a: "No. All comparison and counselling services are 100% free. You pay your course fee directly to the university you choose.",
+    a: "No. All information and counselling services are 100% free. You pay your course fee directly to the university you choose.",
   },
   {
     q: "Is the information on EdGrowth verified?",
     a: "Absolutely. We source details directly from university admission offices and regularly verify fees, syllabus, and accreditation data.",
   },
   {
-    q: "Which universities can I compare on EdGrowth?",
-    a: "You can compare leading universities like Amity, Manipal, Jain, LPU, Shoolini, Uttaranchal, DY Patil, Narsee Monjee, and more — all officially UGC-Approved.",
+    q: "Which universities should I consider for an Online MBA?",
+    a: "You can consider leading universities like Amity, Manipal, Jain, LPU, Shoolini, Uttaranchal, DY Patil, Narsee Monjee, and more — all officially UGC-Approved. Consult our experts to find out the best university for you.",
   },
 ];
 
@@ -313,7 +313,13 @@ function HeroSection() {
                 </a>
                 <a
                   href="tel:+918527511409"
-                  onClick={() => sendGTMEvent({ event: "lp_call_click", placement: "hero_call", method: "tel_link" })}
+                  onClick={() =>
+                    sendGTMEvent({
+                      event: "lp_call_click",
+                      placement: "hero_call",
+                      method: "tel_link",
+                    })
+                  }
                   className="inline-flex h-12 items-center justify-center rounded-lg border border-primary/20 bg-background text-foreground px-8 text-md font-bold hover:bg-primary/5 transition-all">
                   <Phone className="mr-2 h-4 w-4 text-primary" />
                   Talk to an Expert Now
@@ -419,17 +425,18 @@ function LeadCaptureForm() {
       if (result.success) {
         const nameParts = data.name?.trim().split(" ") || [];
         const first_name = nameParts[0] || "";
-        const last_name = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
+        const last_name =
+          nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
 
-        sendGTMEvent({ 
-          event: "lp_generate_lead", 
-          placement: "hero_form", 
+        sendGTMEvent({
+          event: "lp_generate_lead",
+          placement: "hero_form",
           method: "form_submit",
           email: data.email,
           phone_number: data.phone,
           first_name,
           last_name,
-          city: data.location || ""
+          city: data.location || "",
         });
         setSubmitStatus({
           type: "success",
@@ -477,8 +484,8 @@ function LeadCaptureForm() {
   return (
     <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-xl">
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-foreground mb-3">
-          Get Free Expert Counselling
+        <h2 className="text-2xl font-bold text-foreground mb-3">
+          Unlock Your Executive Potential with the Right MBA Program.
         </h2>
         <p className="text-sm text-muted-foreground">
           Shortlist your top 3 MBA programs in a free 10-minute call.
@@ -916,7 +923,13 @@ function MidPageCTA() {
           </a>
           <a
             href="tel:+918527511409"
-            onClick={() => sendGTMEvent({ event: "lp_call_click", placement: "mid_page_cta_call", method: "tel_link" })}
+            onClick={() =>
+              sendGTMEvent({
+                event: "lp_call_click",
+                placement: "mid_page_cta_call",
+                method: "tel_link",
+              })
+            }
             className="inline-flex h-12 items-center justify-center rounded-md border border-primary-foreground/30 px-8 text-sm font-bold text-primary-foreground hover:bg-primary-foreground/10 transition-all">
             <Phone className="mr-2 h-4 w-4" />
             Call: +91 8527511409
@@ -1093,7 +1106,13 @@ function FinalCTA() {
             </a>
             <a
               href="tel:+918527511409"
-              onClick={() => sendGTMEvent({ event: "lp_call_click", placement: "final_cta_call", method: "tel_link" })}
+              onClick={() =>
+                sendGTMEvent({
+                  event: "lp_call_click",
+                  placement: "final_cta_call",
+                  method: "tel_link",
+                })
+              }
               className="inline-flex h-12 items-center justify-center rounded-md border border-primary-foreground/30 text-primary-foreground px-8 text-sm font-bold hover:bg-primary-foreground/10 transition-all">
               <Phone className="mr-2 h-4 w-4" />
               Call Now
@@ -1119,7 +1138,13 @@ function StickyMobileCTA() {
         </a>
         <a
           href="tel:+918527511409"
-          onClick={() => sendGTMEvent({ event: "lp_call_click", placement: "sticky_mobile_call", method: "tel_link" })}
+          onClick={() =>
+            sendGTMEvent({
+              event: "lp_call_click",
+              placement: "sticky_mobile_call",
+              method: "tel_link",
+            })
+          }
           className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-primary text-primary">
           <Phone className="h-5 w-5" />
         </a>
