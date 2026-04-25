@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, DM_Serif_Display } from "next/font/google";
+import { Inter, DM_Serif_Display, Raleway } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
@@ -16,6 +16,12 @@ const dmSerif = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-dm-serif",
+  display: 'swap',
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
   display: 'swap',
 });
 
@@ -88,7 +94,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth min-h-screen overflow-x-hidden" suppressHydrationWarning>
-      <body className={`${inter.variable} ${dmSerif.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden relative`}>
+      <body className={`${inter.variable} ${dmSerif.variable} ${raleway.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden relative`}>
         <GoogleTagManager gtmId="GTM-T3VHHVLD" />
         <ThemeProvider
           attribute="class"

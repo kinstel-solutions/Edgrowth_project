@@ -20,6 +20,8 @@
   --color-popover-foreground: hsl(var(--popover-foreground));
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
+  --color-amity-blue: #1B325D;
+  --color-amity-yellow: #FFC907;
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -27,6 +29,7 @@
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui;
   --font-serif: var(--font-dm-serif), ui-serif, Georgia;
+  --font-raleway: var(--font-raleway);
 
   --animate-fade-in: fadeIn 0.3s ease-out both;
   --animate-fade-in-up: fadeInUp 0.3s ease-out both;
