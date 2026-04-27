@@ -48,7 +48,7 @@ const LeadForm = ({
     } catch (err) {
       if (err instanceof z.ZodError) {
         const newErrors: Record<string, string> = {};
-        err.errors.forEach((e) => {
+        err.issues.forEach((e) => {
           if (e.path[0]) {
             newErrors[e.path[0].toString()] = e.message;
           }
@@ -93,13 +93,16 @@ const LeadForm = ({
         if (onSuccess) onSuccess();
       } else {
         setErrors({
-          submit: `${result.error || "Unknown"} Error while sumbiting, Please check the field and try again`,
+          submit:
+            result.error ||
+            "Failed to submit. Please check the fields and try again.",
         });
       }
     } catch (err) {
-      const errorMsg = err instanceof Error ? err.message : "Unknown";
+      const errorMsg =
+        err instanceof Error ? err.message : "An unexpected error occurred.";
       setErrors({
-        submit: `${errorMsg} Error while sumbiting, Please check the field and try again`,
+        submit: errorMsg,
       });
     } finally {
       setIsSubmitting(false);

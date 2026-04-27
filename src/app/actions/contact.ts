@@ -13,9 +13,12 @@ export async function sendContactEmail(data: ContactFormData) {
   const validatedData = contactSchema.safeParse(data);
 
   if (!validatedData.success) {
+    const errorMsg = validatedData.error.issues
+      .map((issue) => `${issue.path.join(".")}: ${issue.message}`)
+      .join(", ");
     return {
       success: false,
-      error: "Invalid form data. Please check your inputs.",
+      error: `Validation failed: ${errorMsg}`,
     };
   }
 
@@ -57,7 +60,7 @@ export async function sendContactEmail(data: ContactFormData) {
       console.error("Resend API error:", error);
       return {
         success: false,
-        error: "Failed to send email. Please try again later.",
+        error: `Email service error: ${error.message || "Failed to send email. Please try again later."}`,
       };
     }
 
