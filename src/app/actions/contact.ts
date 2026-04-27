@@ -31,12 +31,17 @@ export async function sendContactEmail(data: ContactFormData) {
     };
   }
 
-  const { name, phone, email, location, programs, otherInfo } = validatedData.data;
+  const { name, phone, email, location, programs, otherInfo } =
+    validatedData.data;
 
   try {
     const { data: resData, error } = await resend.emails.send({
       from: "EdGrowth Inquiries <enquiry@edgrowth.info>", // Updated to a valid email format
-      to: ["egpl172026@gmail.com", "shekhar@edgrowth.info", "kinstelsolutions@gmail.com"], // Destination email address
+      to: [
+        "shekhar@edgrowth.info",
+        "egpl172026@gmail.com",
+        "kinstelsolutions@gmail.com",
+      ], // Destination
       subject: `New Inquiry: By ${name || "Anonymous"}, from EdGrowth website`,
       react: ContactEmail({
         name,
@@ -58,7 +63,8 @@ export async function sendContactEmail(data: ContactFormData) {
 
     return {
       success: true,
-      message: "Thank you! Your request has been submitted successfully. We will get back to you soon.",
+      message:
+        "Thank you! Your request has been submitted successfully. We will get back to you soon.",
     };
   } catch (error) {
     console.error("Server Action error:", error);
