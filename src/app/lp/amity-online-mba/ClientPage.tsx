@@ -22,6 +22,18 @@ export default function ClientPage() {
   const [isWhySayYesExpanded, setIsWhySayYesExpanded] = useState(false);
 
   useScrollReveal([isWhySayYesExpanded]);
+  
+  // Scroll locking
+  React.useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isModalOpen]);
 
   const handleOpenModal = (isDownload: boolean) => {
     setIsModalOpen(true);
@@ -78,7 +90,7 @@ export default function ClientPage() {
               </svg>
             </button>
             <h2 className="text-3xl font-amity-serif text-center amity-blue mb-8">
-              Enquire Now
+              {isDownloadModal ? "Download Brochure" : "Enquire Now"}
             </h2>
 
             <LeadForm

@@ -99,9 +99,9 @@ export default function HeroSection({
             </h1>
 
             <div
-              className="inline-block sm:text-lg bg-[#E5F1FF]/90 text-[#19233A] px-2 py-2 font-bold  text-sm animate-fade-in-up"
+              className="inline-block -mt-2 rounded-md tracking-wider font-medium shimmer sm:text-sm bg-[#E5F1FF]/90 text-[#19233A] px-2 py-1 text-xs animate-fade-in-up"
               style={{ animationDelay: "0.3s" }}>
-              Designed for Working Professionals
+              DESIGNED FOR WORKING PROFESSIONALS
             </div>
 
             <div

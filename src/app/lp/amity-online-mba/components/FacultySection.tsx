@@ -55,7 +55,7 @@ export default function FacultySection({
 
     let animationId: number;
     let lastTime: number = 0;
-    const scrollSpeed = 0.05; // Pixels per millisecond
+    const scrollSpeed = 0.12; // Increased speed for better desktop experience
 
     const scroll = (time: number) => {
       if (!lastTime) lastTime = time;
@@ -142,11 +142,11 @@ export default function FacultySection({
         </div>
 
         <div className="mt-10 text-center reveal-on-scroll opacity-0 translate-y-4">
-          {/* <button
+          <button
             onClick={onEnquireClick}
             className="font-raleway bg-amity-yellow text-amity-blue font-bold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors inline-flex items-center gap-2 shadow-md">
             TALK TO AN ACADEMIC EXPERT <ArrowRight size={18} />
-          </button> */}
+          </button>
         </div>
       </div>
     </section>

@@ -71,7 +71,7 @@ export default function ProgramOverviewSection({
           you with the ability to manage critical business decisions.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left items-start">
           {semesters.map((sem, index) => (
             <div
               key={sem.id}

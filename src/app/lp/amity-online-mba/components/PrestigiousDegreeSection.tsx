@@ -27,11 +27,11 @@ export default function PrestigiousDegreeSection({
           />
         </div>
         <div className="mt-10 text-center reveal-on-scroll opacity-0 translate-y-4">
-          {/* <button
+          <button
             onClick={onEnquireClick}
             className="font-raleway bg-amity-blue text-white font-bold px-8 py-3 rounded-full hover:bg-blue-900 transition-colors inline-flex items-center gap-2 shadow-lg">
             SECURE YOUR ADMISSION TODAY <ArrowRight size={18} />
-          </button> */}
+          </button>
         </div>
       </div>
     </section>

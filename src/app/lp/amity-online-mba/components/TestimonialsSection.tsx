@@ -87,7 +87,7 @@ export default function TestimonialsSection({
       <div className="max-w-[1400px] mx-auto px-4 md:px-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-amity-serif amity-blue mb-4">
-            What others say about Amity online mba
+            What others say about Amity Online MBA
           </h2>
           <p className="text-gray-600">
             Hear what our learners have to say about their journey.
